@@ -13,7 +13,6 @@ import Industries from './components/Industries'
 import BuiltForKenya from './components/BuiltForKenya'
 import About from './components/About'
 import Portfolio from './components/Portfolio'
-import Estimator from './components/Estimator'
 import Pricing from './components/Pricing'
 import Process from './components/Process'
 import FAQ from './components/FAQ'
@@ -51,7 +50,6 @@ function MainSite(){
       <BuiltForKenya/>
       <About/>
       <Portfolio/>
-      <Estimator/>
       <Pricing/>
       <Process/>
       <FAQ/>
