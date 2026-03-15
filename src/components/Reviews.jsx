@@ -1,25 +1,19 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+import { createClient } from '@supabase/supabase-js'
 import { containsVulgar } from '../lib/filter'
+
+const supabase = createClient(
+  'https://zakmtzwdaqztdtlowxzr.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpha210endkYXF6dGR0bG93eHpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MDEyNzcsImV4cCI6MjA4OTE3NzI3N30.CZGh8bSa4vAoGO4ACEPYNRlwNSAWOORlYUKP9Swrrfc'
+)
 
 const STARS = [1,2,3,4,5]
 const inputStyle = {
-  width:'100%',
-  background:'#1e293b',
-  border:'1px solid #38bdf8',
-  borderRadius:8,
-  padding:'12px 14px',
-  color:'#f1f5f9',
-  fontSize:14,
-  outline:'none',
-  marginTop:4
+  width:'100%',background:'#1e293b',border:'1px solid #38bdf8',
+  borderRadius:8,padding:'12px 14px',color:'#ffffff',fontSize:14,outline:'none',marginTop:4
 }
 const labelStyle = {
-  color:'#94a3b8',
-  fontSize:12,
-  fontWeight:600,
-  display:'block',
-  marginBottom:4
+  color:'#94a3b8',fontSize:12,fontWeight:600,display:'block',marginBottom:4
 }
 
 export default function Reviews(){
@@ -33,11 +27,12 @@ export default function Reviews(){
   useEffect(()=>{ fetchReviews() },[])
 
   async function fetchReviews(){
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('kw_reviews')
       .select('*')
       .eq('status','approved')
       .order('created_at', { ascending: false })
+    console.log('Reviews:', data, 'Error:', error)
     if(data) setReviews(data)
   }
 
@@ -86,10 +81,9 @@ export default function Reviews(){
         </button>
       </div>
 
-      {/* FORM */}
       {showForm && (
         <div style={{background:'#0f172a',border:'2px solid #0ea5e9',borderRadius:20,padding:32,maxWidth:600,margin:'0 auto 56px'}}>
-          <h3 style={{fontFamily:'Urbanist,sans-serif',fontSize:20,fontWeight:700,marginBottom:24,color:'#f1f5f9'}}>Share Your Experience</h3>
+          <h3 style={{fontFamily:'Urbanist,sans-serif',fontSize:20,fontWeight:700,marginBottom:24,color:'#ffffff'}}>Share Your Experience</h3>
           {success ? (
             <div style={{textAlign:'center',padding:'32px 0'}}>
               <div style={{fontSize:48,marginBottom:12}}>🎉</div>
@@ -109,7 +103,6 @@ export default function Reviews(){
                     placeholder="john@example.com" style={inputStyle}/>
                 </div>
               </div>
-
               <div style={{marginBottom:16}}>
                 <label style={labelStyle}>Service Received</label>
                 <select value={form.service} onChange={e=>setForm({...form,service:e.target.value})} style={inputStyle}>
@@ -117,7 +110,6 @@ export default function Reviews(){
                   {services.map(s=><option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
-
               <div style={{marginBottom:16}}>
                 <label style={labelStyle}>Rating *</label>
                 <div style={{display:'flex',gap:8,marginTop:8}}>
@@ -127,16 +119,13 @@ export default function Reviews(){
                   ))}
                 </div>
               </div>
-
               <div style={{marginBottom:20}}>
                 <label style={labelStyle}>Your Review * (min 20 characters)</label>
                 <textarea required value={form.comment} onChange={e=>setForm({...form,comment:e.target.value})}
                   placeholder="Tell others about your experience with Kaliworks Technologies..."
                   rows={4} style={{...inputStyle,resize:'vertical'}}/>
               </div>
-
               {error && <p style={{color:'#ef4444',fontSize:13,marginBottom:14,background:'rgba(239,68,68,0.1)',padding:'10px 14px',borderRadius:8}}>{error}</p>}
-
               <button type="submit" disabled={loading}
                 style={{background:'#0ea5e9',color:'#000',padding:'13px 28px',borderRadius:10,fontWeight:700,fontSize:15,border:'none',cursor:'pointer',width:'100%'}}>
                 {loading ? 'Submitting...' : '✅ Submit Review'}
@@ -146,30 +135,28 @@ export default function Reviews(){
         </div>
       )}
 
-      {/* REVIEWS GRID */}
+      {/* REVIEWS DISPLAY */}
       {reviews.length === 0 ? (
         <div className="reveal" style={{textAlign:'center',padding:'60px 0'}}>
           <div style={{fontSize:48,marginBottom:16}}>⭐</div>
           <p style={{color:'#94a3b8',fontSize:15}}>Be the first to leave a review!</p>
         </div>
       ) : (
-        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:16}} className="rev-grid">
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:20}} className="rev-grid">
           {reviews.map(r=>(
-            <div key={r.id} className="reveal" style={{background:'#0f172a',border:'1px solid rgba(14,165,233,0.15)',borderRadius:16,padding:24,transition:'all 0.3s'}}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor='#0ea5e9';e.currentTarget.style.transform='translateY(-4px)'}}
-              onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(14,165,233,0.15)';e.currentTarget.style.transform='translateY(0)'}}>
-              <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:12}}>
-                <div style={{width:44,height:44,borderRadius:'50%',background:'linear-gradient(135deg,#0ea5e9,#0284c7)',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Urbanist,sans-serif',fontWeight:800,fontSize:18,color:'#000'}}>
+            <div key={r.id} style={{background:'#0f172a',border:'1px solid #1e3a5f',borderRadius:16,padding:24}}>
+              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16}}>
+                <div style={{width:48,height:48,borderRadius:'50%',background:'linear-gradient(135deg,#0ea5e9,#0284c7)',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:20,color:'#000'}}>
                   {r.name.charAt(0).toUpperCase()}
                 </div>
                 <div style={{display:'flex',gap:2}}>
-                  {STARS.map(s=><span key={s} style={{fontSize:14,opacity:r.rating>=s?1:0.2}}>⭐</span>)}
+                  {STARS.map(s=><span key={s} style={{fontSize:16,opacity:r.rating>=s?1:0.2}}>⭐</span>)}
                 </div>
               </div>
-              <p style={{color:'#f1f5f9',fontWeight:600,fontSize:14,marginBottom:4}}>{r.name}</p>
-              {r.service && <p style={{color:'#0ea5e9',fontSize:11,fontWeight:600,marginBottom:10,textTransform:'uppercase',letterSpacing:'0.5px'}}>{r.service}</p>}
-              <p style={{color:'#94a3b8',fontSize:13,lineHeight:1.7,fontWeight:300}}>{r.comment}</p>
-              <p style={{color:'#3a5270',fontSize:11,marginTop:12}}>{new Date(r.created_at).toLocaleDateString('en-KE',{year:'numeric',month:'short',day:'numeric'})}</p>
+              <p style={{color:'#f1f5f9',fontWeight:700,fontSize:15,marginBottom:4}}>{r.name}</p>
+              {r.service && <p style={{color:'#38bdf8',fontSize:11,fontWeight:600,marginBottom:10,textTransform:'uppercase'}}>{r.service}</p>}
+              <p style={{color:'#cbd5e1',fontSize:13,lineHeight:1.75}}>{r.comment}</p>
+              <p style={{color:'#475569',fontSize:11,marginTop:12}}>{new Date(r.created_at).toLocaleDateString('en-KE',{year:'numeric',month:'short',day:'numeric'})}</p>
             </div>
           ))}
         </div>
@@ -177,7 +164,7 @@ export default function Reviews(){
       <style>{`
         @media(max-width:900px){.rev-grid{grid-template-columns:1fr 1fr!important}.form-grid{grid-template-columns:1fr!important}}
         @media(max-width:600px){.rev-grid{grid-template-columns:1fr!important}}
-        input::placeholder,textarea::placeholder{color:#475569}
+        input::placeholder,textarea::placeholder{color:#475569!important}
         select option{background:#1e293b;color:#ffffff}
       `}</style>
     </section>
