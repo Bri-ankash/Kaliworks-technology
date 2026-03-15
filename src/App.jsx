@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -9,12 +10,14 @@ import Portfolio from './components/Portfolio'
 import Pricing from './components/Pricing'
 import Process from './components/Process'
 import FAQ from './components/FAQ'
+import Reviews from './components/Reviews'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsApp from './components/WhatsApp'
 import CookieBanner from './components/CookieBanner'
+import AdminReviews from './components/AdminReviews'
 
-export default function App(){
+function MainSite(){
   useEffect(()=>{
     const reveals = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver((entries)=>{
@@ -38,10 +41,22 @@ export default function App(){
       <Pricing/>
       <Process/>
       <FAQ/>
+      <Reviews/>
       <Contact/>
       <Footer/>
       <WhatsApp/>
       <CookieBanner/>
     </>
+  )
+}
+
+export default function App(){
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainSite/>}/>
+        <Route path="/kali-admin" element={<AdminReviews/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
