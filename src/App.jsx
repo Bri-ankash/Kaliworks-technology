@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollProgress from './components/ScrollProgress'
+import CursorGlow from './components/CursorGlow'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Marquee from './components/Marquee'
 import Stats from './components/Stats'
 import Services from './components/Services'
 import About from './components/About'
@@ -19,8 +22,8 @@ import AdminReviews from './components/AdminReviews'
 
 function MainSite(){
   useEffect(()=>{
-    const reveals = document.querySelectorAll('.reveal')
-    const observer = new IntersectionObserver((entries)=>{
+    const reveals=document.querySelectorAll('.reveal')
+    const observer=new IntersectionObserver((entries)=>{
       entries.forEach((entry,i)=>{
         if(entry.isIntersecting) setTimeout(()=>entry.target.classList.add('visible'),i*60)
       })
@@ -31,9 +34,12 @@ function MainSite(){
 
   return(
     <>
+      <ScrollProgress/>
+      <CursorGlow/>
       <Loader/>
       <Navbar/>
       <Hero/>
+      <Marquee/>
       <Stats/>
       <Services/>
       <About/>
