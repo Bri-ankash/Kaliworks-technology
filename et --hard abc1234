@@ -1,0 +1,37 @@
+[33m02bcb07[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Final polish: navbar branding, team image, pricing fix
+[33m67ed013[m Final UI overhaul: drawers, black theme, clean reviews, hero fix
+[33md115996[m Services section: drawer, black theme, clean structure
+[33m8b7335e[m Fix UI: black theme, remove fake reviews, clean layout
+[33m0dbc650[m Kaliworks: grey bg, Inter font, all sections as drawers, no emojis, remove Now Live
+[33me24a67a[m Add Smart Pochi to portfolio
+[33m1dff33d[m Update Chama na Kash live link
+[33mce014b3[m Fix build - remove missing component imports
+[33mbc87ef0[m Remove CTABanner import - file not created
+[33me0113fe[m Force Netlify rebuild
+[33m50abb6a[m Add and more services line
+[33m6bbaeb3[m Fix services tabs blank issue - remove reveal class from cards
+[33m200d7e7[m Fix footer text and navbar branding to Kaliworks
+[33me23fb19[m Fix footer branding, remove disclaimer, fix services tabs
+[33m936abc9[m Premium upgrade - WhyUs, Industries, BuiltForKenya, tabbed services, portfolio modals, updated portfolio
+[33m5aade63[m Update sitemap to new URL
+[33m3853c2e[m Update URL to kaliworkstechnology.netlify.app
+[33m957eee8[m Premium upgrade - tabs, modals, carousel, marquee, cursor glow, scroll progress, animated stats
+[33m194faa5[m Fix reviews - hardcode supabase credentials directly
+[33m61a9323[m Fix review card colors
+[33m12bcd15[m Fix Netlify routing for React Router
+[33m868d38e[m Fix review form - fully visible inputs
+[33m118d3c1[m New Kaliworks K circuit logo, fix branding everywhere
+[33m4e5d497[m Fix review form visibility
+[33m627d693[m Remove Talk to Brian, keep clean contact section
+[33m959fd89[m Fix WhatsApp number in Talk to Brian
+[33md52990f[m Add reviews system, Talk to Brian, admin panel
+[33m0807cce[m Add Brian photo to about section
+[33m98a8bfb[m Expand to 20 services
+[33m62f7a7d[m Expand services to 10 - USSD, M-Pesa, WhatsApp bots, SMS, Inventory, Payroll
+[33m8f5dec3[m Update fonts to Urbanist and Manrope
+[33mbfd59f4[m Rebrand to Kaliworks Technologies
+[33mc7fb910[m Remove duplicate Google verification tags
+[33m6716963[m Add Google verification
+[33mf760894[m Add Google verification
+[33m7a4798f[m Add SEO meta tags, sitemap and robots.txt
+[33ma61a2c5[m Initial commit - Nexacore Technologies website

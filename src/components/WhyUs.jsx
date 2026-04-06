@@ -12,23 +12,23 @@ const REASONS = [
 export default function WhyUs(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#fff',borderTop:'1px solid #E4E4E7'}}>
+    <section style={{background:'#0a0a0a',borderTop:'1px solid #1a1a1a'}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Why Choose Us</p>
         <h2 className="sec-title reveal">What Makes Us Different</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>We do not just write code. We build products that work for real people.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {REASONS.map((r,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#F9FAFB'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #1a1a1a',borderRadius:10,overflow:'hidden',background:'#0a0a0a'}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
-                <span style={{fontSize:15,fontWeight:600,color:'#18181B'}}>{r.title}</span>
+                <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>{r.title}</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #E4E4E7'}}>
-                <p style={{color:'#71717A',fontSize:14,lineHeight:1.8,marginTop:12}}>{r.desc}</p>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #1a1a1a'}}>
+                <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{r.desc}</p>
               </div>}
             </div>
           ))}

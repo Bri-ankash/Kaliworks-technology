@@ -34,11 +34,11 @@ export default function Stats(){
   return(
     <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',borderTop:'1px solid rgba(14,165,233,0.12)',borderBottom:'1px solid rgba(14,165,233,0.12)',background:'rgba(14,165,233,0.12)',gap:1}}>
       {stats.map(({num,suffix,label})=>(
-        <div key={label} className="reveal" style={{background:'#060b12',padding:'40px 24px',textAlign:'center'}}>
-          <div style={{fontFamily:'Urbanist,sans-serif',fontSize:42,fontWeight:800,color:'#0ea5e9',letterSpacing:'-2px',lineHeight:1,marginBottom:8}}>
+        <div key={label} className="reveal" style={{background:'#000',padding:'40px 24px',textAlign:'center'}}>
+          <div style={{fontFamily:'Urbanist,sans-serif',fontSize:42,fontWeight:800,color:'#84cc16',letterSpacing:'-2px',lineHeight:1,marginBottom:8}}>
             <CountUp target={num} suffix={suffix}/>
           </div>
-          <div style={{color:'#7a99bb',fontSize:12,fontWeight:500,letterSpacing:'0.5px',textTransform:'uppercase'}}>{label}</div>
+          <div style={{color:'#999',fontSize:12,fontWeight:500,letterSpacing:'0.5px',textTransform:'uppercase'}}>{label}</div>
         </div>
       ))}
       <style>{`@media(max-width:600px){.stats-wrap{grid-template-columns:1fr 1fr!important}}`}</style>

@@ -1,112 +1,102 @@
 import { useState } from 'react'
 
-const ALL_SVCS = [
-  {n:'01', title:'Web Development', desc:'Beautiful, fast, SEO-optimized websites. Landing pages, corporate sites, and e-commerce platforms built to convert.', price:'From KES 8,000', cat:'Web & Mobile'},
-  {n:'02', title:'Mobile Applications', desc:'Cross-platform mobile apps for Android and iOS with modern UI/UX and high performance.', price:'From KES 25,000', cat:'Web & Mobile'},
-  {n:'03', title:'SaaS Platforms', desc:'Full SaaS systems with subscriptions, dashboards, APIs, and scalable infrastructure.', price:'From KES 35,000', cat:'Web & Mobile'},
-  {n:'04', title:'E-Commerce Stores', desc:'Online stores with product catalog, cart, and M-Pesa checkout integration.', price:'From KES 15,000', cat:'Web & Mobile'},
+const CATS = {
+  'Web & Mobile':[
+    {n:'01',title:'Web Development',desc:'Beautiful, fast, SEO-optimized websites. Landing pages, corporate sites, e-commerce — built to convert.',price:'From KES 8,000',tag:'React · Next.js'},
+    {n:'02',title:'Mobile Applications',desc:'Cross-platform mobile apps for iOS and Android. Sleek UX, fast performance, built to scale.',price:'From KES 25,000',tag:'React Native · Flutter'},
+    {n:'03',title:'SaaS Platforms',desc:'Full-stack SaaS products from scratch — subscriptions, dashboards, APIs, billing all included.',price:'From KES 35,000',tag:'Django · PostgreSQL'},
+    {n:'04',title:'E-Commerce Stores',desc:'Full online shop with product catalog, cart, M-Pesa checkout and order management.',price:'From KES 15,000',tag:'Next.js · M-Pesa'},
+  ],
+  'Integrations':[
+    {n:'05',title:'M-Pesa Integration',desc:'STK Push, C2B, B2C, Paybill & Till number. Full Daraja API setup for your website or app.',price:'From KES 8,000',tag:'Daraja API'},
+    {n:'06',title:'WhatsApp Bots',desc:'Automated WhatsApp bots for businesses. Auto-replies, order taking, customer support 24/7.',price:'From KES 10,000',tag:'Meta API · Twilio'},
+    {n:'07',title:'Bulk SMS Systems',desc:'SMS blasting for schools, churches, saccos. Schedule, personalize and track delivery.',price:'From KES 8,000',tag:"Africa's Talking"},
+    {n:'08',title:'USSD Applications',desc:'*123# menu systems for saccos and businesses. Works on any phone, no internet needed.',price:'From KES 15,000',tag:"Africa's Talking"},
+  ],
+  'Systems':[
+    {n:'09',title:'School Management',desc:'Fees, grades, attendance, parent portal. Everything a school needs in one system.',price:'From KES 20,000',tag:'Django · React'},
+    {n:'10',title:'Hospital & Clinic Systems',desc:'Patient records, appointments, billing and prescription tracking for healthcare.',price:'From KES 30,000',tag:'Custom Built'},
+    {n:'11',title:'Church Management',desc:'Member records, tithes, events, SMS communications and attendance tracking.',price:'From KES 10,000',tag:'Django · SMS'},
+    {n:'12',title:'Inventory Systems',desc:'Stock management for shops. Track products, sales, suppliers and low-stock alerts.',price:'From KES 15,000',tag:'Django · React'},
+    {n:'13',title:'Payroll Systems',desc:'Salary calculations, deductions, payslips for SMEs and NGOs. NHIF & NSSF ready.',price:'From KES 20,000',tag:'Django · PDF'},
+    {n:'14',title:'Booking Systems',desc:'Online booking for salons, clinics and hotels. Calendar, reminders, M-Pesa payments.',price:'From KES 10,000',tag:'Django · React'},
+    {n:'15',title:'Real Estate Platforms',desc:'Property listings with search, filters, photo galleries and agent contact features.',price:'From KES 20,000',tag:'Next.js · Django'},
+    {n:'20',title:'Delivery Tracking',desc:'Real-time order and delivery tracking for businesses and courier services.',price:'From KES 15,000',tag:'Django · Maps'},
+  ],
+  'Cloud & AI':[
+    {n:'16',title:'AI Chatbots',desc:'Customer service bots powered by AI. Answer questions, book appointments 24/7.',price:'From KES 15,000',tag:'OpenAI · Claude'},
+    {n:'17',title:'Analytics Dashboards',desc:'Turn business data into visual insights. Sales reports, trends and KPIs in one place.',price:'From KES 20,000',tag:'Python · React'},
+    {n:'18',title:'Cloud & Hosting Setup',desc:'Cloud hosting, migration, SSL, domains and deployment pipelines setup.',price:'From KES 5,000',tag:'AWS · Vercel'},
+    {n:'19',title:'Cyber Security Audits',desc:'Website vulnerability testing, penetration testing and security reports.',price:'From KES 15,000',tag:'Security'},
+  ],
+}
 
-  {n:'05', title:'M-Pesa Integration', desc:'STK Push, Paybill, Till Number, C2B and B2C integrations using Daraja API.', price:'From KES 8,000', cat:'Integrations'},
-  {n:'06', title:'WhatsApp Automation', desc:'Automated WhatsApp bots for customer support, orders, and engagement.', price:'From KES 10,000', cat:'Integrations'},
-  {n:'07', title:'Bulk SMS Systems', desc:'Mass messaging systems with scheduling, personalization, and delivery tracking.', price:'From KES 8,000', cat:'Integrations'},
-  {n:'08', title:'USSD Applications', desc:'Interactive USSD systems (*123#) that work on all phones without internet.', price:'From KES 15,000', cat:'Integrations'},
+const ICONS = {'Web & Mobile':'W','Integrations':'I','Systems':'S','Cloud & AI':'AI'}
 
-  {n:'09', title:'School Management Systems', desc:'Complete school systems with fees, grades, attendance, and parent portals.', price:'From KES 20,000', cat:'Systems'},
-  {n:'10', title:'Hospital & Clinic Systems', desc:'Patient records, appointments, billing, and prescription tracking.', price:'From KES 30,000', cat:'Systems'},
-  {n:'11', title:'Church Management Systems', desc:'Member management, tithes tracking, events, and communication tools.', price:'From KES 10,000', cat:'Systems'},
-  {n:'12', title:'Inventory Systems', desc:'Stock management systems with sales tracking and low-stock alerts.', price:'From KES 15,000', cat:'Systems'},
-  {n:'13', title:'Payroll Systems', desc:'Salary processing, deductions, payslips, NHIF and NSSF compliance.', price:'From KES 20,000', cat:'Systems'},
-  {n:'14', title:'Booking Systems', desc:'Online booking platforms with calendars, reminders, and payment integration.', price:'From KES 10,000', cat:'Systems'},
-  {n:'15', title:'Real Estate Platforms', desc:'Property listing platforms with filters, search, and agent management.', price:'From KES 20,000', cat:'Systems'},
-
-  {n:'16', title:'AI Chatbots', desc:'Smart AI bots for customer service, booking, and automated responses.', price:'From KES 15,000', cat:'Cloud & AI'},
-  {n:'17', title:'Analytics Dashboards', desc:'Data visualization dashboards with reports, KPIs, and insights.', price:'From KES 20,000', cat:'Cloud & AI'},
-  {n:'18', title:'Cloud & Hosting Setup', desc:'Deployment, hosting, SSL, domains, and cloud infrastructure setup.', price:'From KES 5,000', cat:'Cloud & AI'},
-  {n:'19', title:'Cybersecurity Audits', desc:'Security testing, vulnerability scanning, and protection reports.', price:'From KES 15,000', cat:'Cloud & AI'},
-  {n:'20', title:'Delivery Tracking Systems', desc:'Real-time order and delivery tracking with maps and notifications.', price:'From KES 15,000', cat:'Systems'},
-]
-
-const TABS = ['All','Web & Mobile','Integrations','Systems','Cloud & AI']
+function Chevron({open}){
+  return(
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="2" strokeLinecap="round"
+      style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  )
+}
 
 export default function Services(){
-  const [active,setActive]=useState('All')
-  const [open,setOpen]=useState(false)
-
-  const filtered = active==='All' ? ALL_SVCS : ALL_SVCS.filter(s=>s.cat===active)
+  const [openCat, setOpenCat] = useState(null)
 
   return(
-    <section id="services" style={{background:'#000',padding:'96px 6%'}}>
-
-      {/* HEADER (DRAWER TOGGLE) */}
-      <div onClick={()=>setOpen(!open)} style={{cursor:'pointer',textAlign:'center'}}>
-        <div style={{color:'#32CD32',fontSize:13,letterSpacing:2,marginBottom:10}}>WHAT WE DO</div>
-        <h2 style={{color:'#32CD32',fontSize:'clamp(28px,5vw,48px)',fontWeight:800,marginBottom:10}}>
-          20 Digital Solutions<br/>Built for Kenya
-        </h2>
-        <p style={{color:'#aaaaaa',maxWidth:600,margin:'0 auto'}}>
+    <section id="services" style={{background:'#000',borderTop:'1px solid #1a1a1a'}}>
+      <div style={{maxWidth:900,margin:'0 auto'}}>
+        <p className="eyebrow reveal">What We Do</p>
+        <h2 className="sec-title reveal">20 Digital Solutions<br/>Built for Kenya</h2>
+        <p className="sec-sub reveal" style={{marginBottom:8}}>
           From simple websites to complex SaaS — everything your business needs online.
         </p>
-      </div>
+        <p style={{color:'#999',fontSize:13,marginBottom:36}}>Tap a category to explore services.</p>
 
-      {/* DRAWER CONTENT */}
-      {open && (
-        <>
-          {/* TABS */}
-          <div style={{display:'flex',gap:10,flexWrap:'wrap',justifyContent:'center',marginTop:40}}>
-            {TABS.map(tab=>(
-              <button key={tab} onClick={()=>setActive(tab)}
-                style={{
-                  padding:'8px 18px',
-                  borderRadius:100,
-                  border:'1px solid #1a1a1a',
-                  background:active===tab?'#32CD32':'#0a0a0a',
-                  color:active===tab?'#000':'#fff',
-                  cursor:'pointer'
-                }}>
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          {/* GRID */}
-          <div className="svc-grid" style={{
-            display:'grid',
-            gridTemplateColumns:'repeat(4,1fr)',
-            gap:12,
-            marginTop:40
-          }}>
-            {filtered.map(s=>(
-              <div key={s.n} style={{
-                background:'#0a0a0a',
-                border:'1px solid #1a1a1a',
-                padding:20,
-                borderRadius:10
-              }}>
-                <div style={{color:'#32CD32',fontWeight:800,marginBottom:6}}>{s.n}</div>
-                <h3 style={{color:'#fff',fontSize:15,marginBottom:6}}>{s.title}</h3>
-                <p style={{color:'#aaaaaa',fontSize:13,lineHeight:1.6}}>{s.desc}</p>
-                <div style={{color:'#FFD700',marginTop:10,fontSize:13,fontWeight:600}}>
-                  {s.price}
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          {Object.entries(CATS).map(([cat,svcs],i)=>(
+            <div key={cat} className="reveal drawer-item">
+              <button className="drawer-btn" onClick={()=>setOpenCat(openCat===i?null:i)}>
+                <div style={{display:'flex',alignItems:'center',gap:12}}>
+                  <div style={{width:32,height:32,borderRadius:7,background:'rgba(132,204,22,0.1)',border:'1px solid rgba(132,204,22,0.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontWeight:800,color:'#84cc16',flexShrink:0}}>
+                    {ICONS[cat]}
+                  </div>
+                  <div>
+                    <div style={{fontWeight:700,fontSize:15,color:'#fff'}}>{cat}</div>
+                    <div style={{color:'#999',fontSize:12}}>{svcs.length} services</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+                <Chevron open={openCat===i}/>
+              </button>
+              {openCat===i&&(
+                <div style={{padding:'0 20px 20px',borderTop:'1px solid #1a1a1a'}}>
+                  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:12,marginTop:16}}>
+                    {svcs.map(s=>(
+                      <div key={s.n} style={{background:'#111',border:'1px solid #1a1a1a',borderRadius:10,padding:16,transition:'all 0.2s'}}
+                        onMouseEnter={e=>{e.currentTarget.style.borderColor='#84cc16';e.currentTarget.style.background='#0a0a0a'}}
+                        onMouseLeave={e=>{e.currentTarget.style.borderColor='#1a1a1a';e.currentTarget.style.background='#111'}}>
+                        <div style={{fontSize:10,fontWeight:700,color:'#84cc16',marginBottom:4,letterSpacing:1}}>{s.n}</div>
+                        <div style={{fontWeight:700,fontSize:13,color:'#fff',marginBottom:6}}>{s.title}</div>
+                        <p style={{color:'#999',fontSize:11,lineHeight:1.7,marginBottom:10}}>{s.desc}</p>
+                        <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
+                          <span style={{background:'rgba(132,204,22,0.08)',border:'1px solid rgba(132,204,22,0.2)',color:'#84cc16',fontSize:10,padding:'2px 8px',borderRadius:100,fontWeight:700}}>{s.price}</span>
+                          <span style={{color:'#555',fontSize:10,padding:'2px 8px'}}>{s.tag}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-          {/* RESPONSIVE */}
-          <style>{`
-            @media(max-width:1100px){
-              .svc-grid{grid-template-columns:repeat(3,1fr)}
-            }
-            @media(max-width:768px){
-              .svc-grid{grid-template-columns:repeat(2,1fr)}
-            }
-            @media(max-width:480px){
-              .svc-grid{grid-template-columns:1fr}
-            }
-          `}</style>
-        </>
-      )}
-
+        <div className="reveal" style={{textAlign:'center',marginTop:24,padding:'18px',background:'#0a0a0a',border:'1px solid #1a1a1a',borderRadius:10}}>
+          <p style={{color:'#999',fontSize:14}}>Have a unique project? <a href="#contact" style={{color:'#84cc16',fontWeight:700}}>Tell us about it</a> — if it can be built, we build it.</p>
+        </div>
+      </div>
     </section>
   )
 }

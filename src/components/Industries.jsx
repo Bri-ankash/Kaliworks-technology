@@ -14,23 +14,23 @@ const INDUSTRIES = [
 export default function Industries(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#F4F4F5',borderTop:'1px solid #E4E4E7'}}>
+    <section style={{background:'#000',borderTop:'1px solid #1a1a1a'}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Industries</p>
         <h2 className="sec-title reveal">Industries We Have Built For</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>From fintech to farming — we have shipped products across Kenya's most critical sectors.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {INDUSTRIES.map((ind,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#fff'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #1a1a1a',borderRadius:10,overflow:'hidden',background:'#0a0a0a'}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
-                <span style={{fontSize:15,fontWeight:600,color:'#18181B'}}>{ind.name}</span>
+                <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>{ind.name}</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #E4E4E7'}}>
-                <p style={{color:'#71717A',fontSize:14,lineHeight:1.8,marginTop:12}}>{ind.desc}</p>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #1a1a1a'}}>
+                <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{ind.desc}</p>
               </div>}
             </div>
           ))}

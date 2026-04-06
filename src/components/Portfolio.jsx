@@ -9,29 +9,29 @@ const PROJECTS = [
 export default function Portfolio(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#fff',borderTop:'1px solid #E4E4E7'}}>
+    <section style={{background:'#0a0a0a',borderTop:'1px solid #1a1a1a'}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Our Work</p>
         <h2 className="sec-title reveal">Projects We Are Proud Of</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>Live products built and deployed for the Kenyan market.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {PROJECTS.map((p,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#F9FAFB'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #1a1a1a',borderRadius:10,overflow:'hidden',background:'#0a0a0a'}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
                 <div>
-                  <div style={{fontSize:15,fontWeight:700,color:'#18181B',marginBottom:2}}>{p.name}</div>
-                  <div style={{fontSize:12,color:'#2563EB',fontWeight:600}}>{p.category}</div>
+                  <div style={{fontSize:15,fontWeight:700,color:'#fff',marginBottom:2}}>{p.name}</div>
+                  <div style={{fontSize:12,color:'#84cc16',fontWeight:600}}>{p.category}</div>
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #E4E4E7'}}>
-                <p style={{color:'#71717A',fontSize:14,lineHeight:1.8,marginTop:12,marginBottom:12}}>{p.desc}</p>
+              {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #1a1a1a'}}>
+                <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12,marginBottom:12}}>{p.desc}</p>
                 <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:14}}>
                   {p.tech.split(', ').map(t=>(
-                    <span key={t} style={{background:'#DBEAFE',color:'#1D4ED8',fontSize:11,fontWeight:600,padding:'3px 10px',borderRadius:100}}>{t}</span>
+                    <span key={t} style={{background:'rgba(132,204,22,0.1)',color:'#84cc16',fontSize:11,fontWeight:600,padding:'3px 10px',borderRadius:100}}>{t}</span>
                   ))}
                 </div>
                 <a href={p.url} target="_blank" rel="noreferrer"
