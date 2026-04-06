@@ -1,34 +1,57 @@
 import { useState } from 'react'
 
-
 export default function Reviews(){
-  const [open, setOpen] = useState(false)
+  const [open,setOpen]=useState(false)
+  const [reviews,setReviews]=useState([])
+
   return(
-    <section style={{background:'#F4F4F5',borderTop:'1px solid #E4E4E7'}}>
+    <section style={{background:'#000',padding:'80px 6%',borderTop:'1px solid #1a1a1a'}}>
+      
       <div style={{maxWidth:800,margin:'0 auto'}}>
-        <p className="eyebrow reveal">Reviews</p>
-        <h2 className="sec-title reveal">What Clients Say</h2>
-        <div className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#fff'}}>
+        <div style={{color:'#32CD32',fontSize:13,letterSpacing:2}}>REVIEWS</div>
+        <h2 style={{color:'#32CD32'}}>Client Reviews</h2>
+
+        <div style={{border:'1px solid #1a1a1a',borderRadius:10,marginTop:20}}>
+          
+          {/* TOGGLE */}
           <button onClick={()=>setOpen(!open)}
-            style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
-            <span style={{fontSize:15,fontWeight:600,color:'#18181B'}}>Client Reviews ({REVIEWS.length})</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
+            style={{
+              width:'100%',
+              padding:16,
+              background:'#0a0a0a',
+              border:'none',
+              color:'#fff',
+              textAlign:'left',
+              cursor:'pointer'
+            }}>
+            View Reviews
           </button>
-          {open&&(
-            <div style={{padding:'0 20px 20px',borderTop:'1px solid #E4E4E7'}}>
-              {REVIEWS.map((r,i)=>(
-                <div key={i} style={{paddingTop:16,paddingBottom:16,borderBottom:i<REVIEWS.length-1?'1px solid #E4E4E7':'none'}}>
-                  <p style={{color:'#3F3F46',fontSize:14,lineHeight:1.8,marginBottom:10,fontStyle:'italic'}}>"{r.text}"</p>
-                  <div style={{fontWeight:700,fontSize:13,color:'#18181B'}}>{r.name}</div>
-                  <div style={{fontSize:12,color:'#71717A'}}>{r.role}</div>
+
+          {/* CONTENT */}
+          {open && (
+            <div style={{padding:16}}>
+              
+              {reviews.length===0 && (
+                <p style={{color:'#aaaaaa'}}>No reviews yet. Be the first to leave one.</p>
+              )}
+
+              {reviews.map((r,i)=>(
+                <div key={i} style={{marginBottom:16,borderBottom:'1px solid #1a1a1a'}}>
+                  <p style={{color:'#fff'}}>{r.text}</p>
+
+                  <div style={{display:'flex',gap:10}}>
+                    <button>👍</button>
+                    <button>👎</button>
+                  </div>
                 </div>
               ))}
+
             </div>
           )}
+
         </div>
       </div>
+
     </section>
   )
 }
