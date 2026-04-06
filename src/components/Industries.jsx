@@ -25,7 +25,7 @@ export default function Industries(){
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
                 <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>{ind.name}</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>

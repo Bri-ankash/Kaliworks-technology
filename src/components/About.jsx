@@ -8,7 +8,7 @@ const ABOUT_ITEMS = [
 
 function Chevron({open}){
   return(
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="2" strokeLinecap="round"
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"
       style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
       <polyline points="6 9 12 15 18 9"/>
     </svg>
@@ -43,19 +43,24 @@ export default function About(){
 
         {/* Team */}
         <div className="reveal" style={{background:'#0a0a0a',border:'1px solid #1a1a1a',borderRadius:12,padding:24}}>
-          <p style={{fontWeight:700,fontSize:13,color:'#84cc16',marginBottom:18,textTransform:'uppercase',letterSpacing:2,fontSize:11}}>The Team</p>
+          <p style={{fontWeight:700,fontSize:11,color:'#fbbf24',marginBottom:18,textTransform:'uppercase',letterSpacing:2}}>The Team</p>
           <div style={{display:'flex',gap:16,alignItems:'flex-start',flexWrap:'wrap'}}>
-            <div style={{width:64,height:64,borderRadius:12,background:'#111',border:'1px solid #1a1a1a',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,overflow:'hidden'}}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="1.5">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
+            {/* Photo placeholder — replace src with actual photo when available */}
+            <div style={{
+              width:72,height:72,borderRadius:14,
+              background:'linear-gradient(135deg,#1a1a1a,#0a0a0a)',
+              border:'2px solid #fbbf24',
+              display:'flex',alignItems:'center',justifyContent:'center',
+              flexShrink:0,overflow:'hidden',
+              color:'#fbbf24',fontSize:24,fontWeight:800
+            }}>
+              B
             </div>
-            <div>
+            <div style={{flex:1,minWidth:200}}>
               <div style={{fontWeight:700,fontSize:16,color:'#fff',marginBottom:3}}>Brian Kalali</div>
-              <div style={{color:'#84cc16',fontSize:12,fontWeight:600,marginBottom:8}}>Founder & Lead Developer</div>
-              <p style={{color:'#999',fontSize:13,lineHeight:1.7,maxWidth:460}}>
-                Full-stack developer building SaaS and marketplace products from Nairobi. Specializes in Python, React, and M-Pesa integrations. Creator of Servigo, Smart Pochi, and Chama na Kash.
+              <div style={{color:'#84cc16',fontSize:12,fontWeight:600,marginBottom:10}}>Founder & Lead Developer</div>
+              <p style={{color:'#999',fontSize:13,lineHeight:1.8,maxWidth:480}}>
+                Kenya-based full-stack developer crafting scalable, practical software. Experienced in Python, React, and M-Pesa integrations, and passionate about creating solutions that make a real impact.
               </p>
             </div>
           </div>

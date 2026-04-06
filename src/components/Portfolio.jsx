@@ -23,7 +23,7 @@ export default function Portfolio(){
                   <div style={{fontSize:15,fontWeight:700,color:'#fff',marginBottom:2}}>{p.name}</div>
                   <div style={{fontSize:12,color:'#84cc16',fontWeight:600}}>{p.category}</div>
                 </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>

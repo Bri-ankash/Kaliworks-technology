@@ -20,7 +20,7 @@ const PLANS = [
 
 function Chevron({open}){
   return(
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="2" strokeLinecap="round"
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"
       style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
       <polyline points="6 9 12 15 18 9"/>
     </svg>
@@ -59,7 +59,7 @@ export default function Pricing(){
                   <ul style={{listStyle:'none',display:'flex',flexDirection:'column',gap:8,marginBottom:20}}>
                     {plan.features.map(f=>(
                       <li key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#ccc'}}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="3" strokeLinecap="round" style={{flexShrink:0,marginTop:1}}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" style={{flexShrink:0,marginTop:1}}>
                           <polyline points="20 6 9 17 4 12"/>
                         </svg>
                         {f}

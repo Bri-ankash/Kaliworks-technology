@@ -88,7 +88,7 @@ export default function Reviews(){
         <div className="reveal drawer-item" style={{marginBottom:8}}>
           <button className="drawer-btn" onClick={()=>setOpen(!open)}>
             <span>Client Reviews</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="2" strokeLinecap="round"
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round"
               style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
               <polyline points="6 9 12 15 18 9"/>
             </svg>
