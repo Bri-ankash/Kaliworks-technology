@@ -7,7 +7,7 @@ export default function Footer(){
         <span style={{fontFamily:'Urbanist,sans-serif',fontWeight:800,fontSize:15,color:'#e8f4ff'}}>Kali<span style={{color:'#0ea5e9'}}>works</span> Technologies</span>
       </a>
       <p style={{color:'#3a5270',fontSize:12,textAlign:'center'}}>© 2026 Kaliworks Technologies. A team of passionate developers building Africa's digital future.</p>
-      <p style={{color:'#0ea5e9',fontSize:12}}>Nairobi, Kenya 🇰🇪</p>
+      <p style={{color:'#0ea5e9',fontSize:12}}>Nairobi, Kenya </p>
     </footer>
   )
 }

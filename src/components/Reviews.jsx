@@ -1,10 +1,5 @@
 import { useState } from 'react'
 
-const REVIEWS = [
-  {name:'Sarah M.',role:'Founder, Servigo',text:'Kaliworks built our entire marketplace from scratch. M-Pesa escrow, verified providers, real-time tracking. They understood Kenya before I finished explaining.'},
-  {name:'James K.',role:'CEO, Smart Pochi',text:'Our M-Pesa analyzer went from idea to live in 6 weeks. Clean code, proper documentation, and they stayed available after launch to fix edge cases.'},
-  {name:'Wanjiru N.',role:'Director, Chama Platform',text:'The chama management system handles 50+ groups. They built offline capability we never asked for but really needed for rural members.'},
-]
 
 export default function Reviews(){
   const [open, setOpen] = useState(false)

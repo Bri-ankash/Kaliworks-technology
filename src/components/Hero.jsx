@@ -11,10 +11,9 @@ export default function Hero(){
       <div style={{position:'relative',zIndex:1,maxWidth:880}}>
         <div style={{display:'inline-flex',alignItems:'center',gap:8,background:'rgba(14,165,233,0.08)',border:'1px solid rgba(14,165,233,0.25)',color:'var(--blue2)',padding:'7px 18px',borderRadius:100,fontSize:12,fontWeight:600,letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:30,...t()}}>
           <span style={{width:7,height:7,borderRadius:'50%',background:'var(--blue)',boxShadow:'0 0 8px var(--blue)',animation:'blink 1.5s infinite',display:'inline-block'}}/>
-          Nairobi, Kenya · Available Now
         </div>
         <h1 style={{fontFamily:'Urbanist,sans-serif',fontSize:'clamp(42px,8vw,84px)',fontWeight:800,lineHeight:1.03,letterSpacing:'-3px',marginBottom:24,...t('0.12s')}}>
-          We Build <span style={{color:'#2563EB'}}>Digital</span><br/>Systems That<br/><span style={{color:'var(--faint)'}}>Scale & Grow</span>
+          We Build <span style={{color:'#32CD32'}}>Digital</span><br/>Systems That<br/><span style={{color:'var(--faint)'}}>Scale & Grow</span>
         </h1>
         <p style={{fontSize:'clamp(16px,1.8vw,19px)',color:'#71717A',lineHeight:1.75,maxWidth:580,margin:'0 auto 44px',fontWeight:300,...t('0.24s')}}>
           Kaliworks Technologies designs and builds websites, mobile apps, SaaS platforms, and web management systems for businesses across Kenya and beyond.

@@ -49,7 +49,6 @@ export default function About(){
               </div>
             </div>
           ))}
-          <p style={{color:'#71717A',fontSize:13,marginTop:16,fontStyle:'italic'}}>More team members joining soon. Portfolio of other developers will be added here.</p>
         </div>
       </div>
     </section>
