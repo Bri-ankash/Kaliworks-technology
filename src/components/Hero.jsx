@@ -14,9 +14,9 @@ export default function Hero(){
           Nairobi, Kenya · Available Now
         </div>
         <h1 style={{fontFamily:'Urbanist,sans-serif',fontSize:'clamp(42px,8vw,84px)',fontWeight:800,lineHeight:1.03,letterSpacing:'-3px',marginBottom:24,...t('0.12s')}}>
-          We Build <span style={{color:'var(--blue)'}}>Digital</span><br/>Systems That<br/><span style={{color:'var(--faint)'}}>Scale & Grow</span>
+          We Build <span style={{color:'#2563EB'}}>Digital</span><br/>Systems That<br/><span style={{color:'var(--faint)'}}>Scale & Grow</span>
         </h1>
-        <p style={{fontSize:'clamp(16px,1.8vw,19px)',color:'var(--muted)',lineHeight:1.75,maxWidth:580,margin:'0 auto 44px',fontWeight:300,...t('0.24s')}}>
+        <p style={{fontSize:'clamp(16px,1.8vw,19px)',color:'#71717A',lineHeight:1.75,maxWidth:580,margin:'0 auto 44px',fontWeight:300,...t('0.24s')}}>
           Kaliworks Technologies designs and builds websites, mobile apps, SaaS platforms, and web management systems for businesses across Kenya and beyond.
         </p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap',...t('0.36s')}}>

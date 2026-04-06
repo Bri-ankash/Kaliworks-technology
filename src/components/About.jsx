@@ -1,33 +1,57 @@
+import { useState } from 'react'
+
+const TEAM = [
+  {name:'Brian Kalali',role:'Founder & Lead Developer',bio:'Full-stack developer building SaaS and marketplace products from Nairobi. Specializes in Python, React, and M-Pesa integrations.'},
+]
+
+const ABOUT_ITEMS = [
+  {title:'Who We Are',desc:'Kaliworks Technologies is a Nairobi-based software development studio. We build web applications, mobile-responsive platforms, and SaaS products for Kenyan and African businesses. Founded by developers who understand Africa\'s unique market conditions.'},
+  {title:'What We Do',desc:'We design, build, and deploy full-stack software products. From your first wireframe to a live production system — database design, backend APIs, frontend interfaces, payment integrations, and cloud hosting.'},
+  {title:'Our Approach',desc:'We work closely with founders and business owners to understand the actual problem before writing a single line of code. We ship fast, iterate based on real feedback, and stay available after launch.'},
+]
+
 export default function About(){
-  const skills=['Full-Stack Dev','Django','React / Next.js','Mobile Apps','Cloud Deploy','M-Pesa API']
+  const [open, setOpen] = useState(0)
   return(
-    <section id="about" style={{background:'var(--black)'}}>
-      <div className="reveal">
-        <div className="eyebrow">Who We Are</div>
-        <h2 className="sec-title">Built by Builders,<br/>For Builders</h2>
-        <p className="sec-sub">A passionate team of developers and designers based in Nairobi, Kenya.</p>
-      </div>
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:70,alignItems:'center',marginTop:56}} className="about-grid">
-        <div className="reveal" style={{background:'var(--card)',border:'1px solid var(--border2)',borderRadius:20,padding:36,position:'relative',boxShadow:'0 0 80px rgba(14,165,233,0.08)'}}>
-          <div style={{position:'absolute',top:0,left:0,right:0,height:2,background:'linear-gradient(90deg,var(--blue),transparent)',borderRadius:'20px 20px 0 0'}}/>
-          <img src='https://i.ibb.co/kfwthY9/IMG-20250727-160634-1.jpg' alt='Brian Kalali' style={{width:110,height:110,borderRadius:'50%',objectFit:'cover',objectPosition:'center top',marginBottom:18,border:'3px solid var(--blue)',boxShadow:'0 0 30px rgba(14,165,233,0.3)'}}/>
-          <h3 style={{fontFamily:'Urbanist,sans-serif',fontSize:20,fontWeight:800,marginBottom:4}}>Brian Kalali</h3>
-          <div style={{color:'var(--blue)',fontSize:13,fontWeight:600,marginBottom:16}}>Founder & Lead Developer</div>
-          <p style={{color:'var(--muted)',fontSize:13,lineHeight:1.7,fontWeight:300}}>Self-driven software developer based in Nairobi, Kenya. Passionate about building real-world digital solutions that create opportunities for businesses across Africa.</p>
-          <div style={{display:'flex',flexWrap:'wrap',gap:8,marginTop:18}}>
-            {skills.map(s=><span key={s} style={{background:'rgba(14,165,233,0.07)',border:'1px solid var(--border)',color:'var(--blue3)',fontSize:11,padding:'4px 12px',borderRadius:100,fontWeight:500}}>{s}</span>)}
-          </div>
+    <section style={{background:'#F4F4F5',borderTop:'1px solid #E4E4E7'}}>
+      <div style={{maxWidth:800,margin:'0 auto'}}>
+        <p className="eyebrow reveal">About Us</p>
+        <h2 className="sec-title reveal">Who Are We</h2>
+        <p className="sec-sub reveal" style={{marginBottom:32}}>A lean, technical team that ships real products.</p>
+        <div style={{display:'flex',flexDirection:'column',gap:8,marginBottom:32}}>
+          {ABOUT_ITEMS.map((item,i)=>(
+            <div key={i} className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#fff'}}>
+              <button onClick={()=>setOpen(open===i?null:i)}
+                style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
+                <span style={{fontSize:15,fontWeight:600,color:'#18181B'}}>{item.title}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #E4E4E7'}}>
+                <p style={{color:'#71717A',fontSize:14,lineHeight:1.8,marginTop:12}}>{item.desc}</p>
+              </div>}
+            </div>
+          ))}
         </div>
-        <div className="reveal">
-          <p style={{color:'var(--muted)',fontSize:15,lineHeight:1.8,fontWeight:300,marginBottom:20}}><strong style={{color:'var(--white)',fontWeight:600}}>Kaliworks Technologies</strong> was founded with one clear mission: to make professional-grade technology accessible to every business in Kenya, regardless of size or budget.</p>
-          <p style={{color:'var(--muted)',fontSize:15,lineHeight:1.8,fontWeight:300,marginBottom:20}}>We believe great software should not be a luxury. Small businesses, startups, chamas, schools, and entrepreneurs deserve tools that actually work — and that's exactly what we build.</p>
-          <p style={{color:'var(--muted)',fontSize:15,lineHeight:1.8,fontWeight:300,marginBottom:24}}>Every project gets our full attention, from the first conversation to the final launch and beyond. We don't just ship code — we build relationships.</p>
-          <div style={{background:'rgba(14,165,233,0.05)',border:'1px solid rgba(14,165,233,0.2)',borderLeft:'3px solid var(--blue)',borderRadius:'0 10px 10px 0',padding:'16px 20px'}}>
-            <p style={{color:'var(--muted)',fontSize:13,lineHeight:1.6,margin:0}}><strong style={{color:'var(--blue2)'}}>🤝 Our Commitment:</strong> We are not certified IT consultants. Any guidance provided is based on hands-on experience only and offered as general assistance. Your success is our success.</p>
-          </div>
+        {/* Team */}
+        <div className="reveal" style={{background:'#fff',border:'1px solid #E4E4E7',borderRadius:12,padding:24}}>
+          <p style={{fontWeight:700,fontSize:14,color:'#18181B',marginBottom:16}}>The Team</p>
+          {TEAM.map((m,i)=>(
+            <div key={i} style={{display:'flex',gap:14,alignItems:'flex-start'}}>
+              <div style={{width:48,height:48,borderRadius:12,background:'#DBEAFE',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:18,fontWeight:800,color:'#2563EB'}}>
+                {m.name[0]}
+              </div>
+              <div>
+                <div style={{fontWeight:700,fontSize:14,color:'#18181B',marginBottom:2}}>{m.name}</div>
+                <div style={{color:'#2563EB',fontSize:12,fontWeight:600,marginBottom:4}}>{m.role}</div>
+                <p style={{color:'#71717A',fontSize:13,lineHeight:1.6}}>{m.bio}</p>
+              </div>
+            </div>
+          ))}
+          <p style={{color:'#71717A',fontSize:13,marginTop:16,fontStyle:'italic'}}>More team members joining soon. Portfolio of other developers will be added here.</p>
         </div>
       </div>
-      <style>{`@media(max-width:900px){.about-grid{grid-template-columns:1fr!important}}`}</style>
     </section>
   )
 }

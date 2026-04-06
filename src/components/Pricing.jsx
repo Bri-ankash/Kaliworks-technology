@@ -1,37 +1,70 @@
+import { useState } from 'react'
+
+const PLANS = [
+  {
+    name:'Starter',price:'KES 25,000',period:'one-time',
+    desc:'Best for small businesses and MVPs',
+    features:['Up to 5 core features','Responsive web app','M-Pesa integration','Basic admin panel','3 months bug support','GitHub source code delivery'],
+    cta:'Get Started',color:'#E4E4E7',textColor:'#18181B'
+  },
+  {
+    name:'Growth',price:'KES 60,000',period:'one-time',
+    desc:'For funded startups and growing businesses',
+    features:['Up to 15 features','Full-stack web platform','M-Pesa STK Push & Paybill','User dashboards & analytics','Admin control panel','API integrations','6 months support','Render/VPS deployment'],
+    cta:'Most Popular',color:'#1D4ED8',textColor:'#fff',popular:true
+  },
+  {
+    name:'Enterprise',price:'Custom',period:'quote',
+    desc:'Large platforms, teams, and complex systems',
+    features:['Unlimited features','Custom architecture','All payment integrations','Multi-role dashboards','Mobile PWA included','Custom domain & SSL','12 months priority support','Dedicated team access'],
+    cta:'Get a Quote',color:'#18181B',textColor:'#fff'
+  },
+]
+
 export default function Pricing(){
-  const plans=[
-    {name:'Starter',desc:'Perfect for landing pages, portfolios & small business sites.',price:'KES 8K',note:'One-time · 2–4 weeks',popular:false,features:['Responsive website (up to 5 pages)','Mobile-friendly design','Contact form','Basic SEO setup','1 month free support'],missing:['Admin dashboard','Database / backend','Mobile app']},
-    {name:'Business',desc:'Ideal for web management systems, SaaS MVPs & full-stack apps.',price:'KES 35K',note:'One-time · 4–8 weeks',popular:true,features:['Full-stack web application','Admin dashboard & user management','Database design & API','Authentication & roles','M-Pesa integration','Cloud deployment','3 months free support'],missing:['Mobile app']},
-    {name:'Enterprise',desc:'For complex SaaS platforms, mobile apps & multi-system builds.',price:'KES 80K',note:'One-time + retainer · 8–16 weeks',popular:false,features:['Everything in Business','Mobile app (iOS + Android)','Advanced analytics','Multi-tenant architecture','Custom integrations','Priority 24/7 support','6 months free support','Source code handover'],missing:[]},
-  ]
+  const [open, setOpen] = useState(null)
   return(
-    <section id="pricing" style={{background:'var(--black)'}}>
-      <div className="reveal">
-        <div className="eyebrow">Pricing</div>
-        <h2 className="sec-title">Transparent Pricing.<br/>No Surprises.</h2>
-        <p className="sec-sub">Starting budgets to give you an idea. Final quotes are tailored to your exact project.</p>
+    <section style={{background:'#F4F4F5',borderTop:'1px solid #E4E4E7'}}>
+      <div style={{maxWidth:800,margin:'0 auto'}}>
+        <p className="eyebrow reveal">Pricing</p>
+        <h2 className="sec-title reveal">Simple, Flat Pricing</h2>
+        <p className="sec-sub reveal" style={{marginBottom:32}}>No hourly billing. No surprise invoices. What we quote is what you pay.</p>
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          {PLANS.map((plan,i)=>(
+            <div key={i} className="reveal" style={{border:`1px solid ${plan.popular?'#1D4ED8':'#E4E4E7'}`,borderRadius:10,overflow:'hidden',background:'#fff',position:'relative'}}>
+              {plan.popular&&<div style={{position:'absolute',top:0,left:0,right:0,height:3,background:'#1D4ED8'}}/>}
+              <button onClick={()=>setOpen(open===i?null:i)}
+                style={{width:'100%',padding:'18px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
+                <div>
+                  <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:2}}>
+                    <span style={{fontSize:15,fontWeight:700,color:'#18181B'}}>{plan.name}</span>
+                    {plan.popular&&<span style={{background:'#DBEAFE',color:'#1D4ED8',fontSize:10,fontWeight:700,padding:'2px 8px',borderRadius:100}}>Popular</span>}
+                  </div>
+                  <div style={{fontSize:18,fontWeight:800,color:'#2563EB'}}>{plan.price} <span style={{fontSize:12,color:'#71717A',fontWeight:400}}>{plan.period}</span></div>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #E4E4E7'}}>
+                <p style={{color:'#71717A',fontSize:13,marginTop:12,marginBottom:14}}>{plan.desc}</p>
+                <ul style={{listStyle:'none',display:'flex',flexDirection:'column',gap:8,marginBottom:16}}>
+                  {plan.features.map(f=>(
+                    <li key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#3F3F46'}}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="3" strokeLinecap="round" style={{flexShrink:0,marginTop:1}}>
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" style={{display:'inline-block',padding:'10px 24px',borderRadius:8,background:'#18181B',color:'#fff',fontSize:13,fontWeight:700}}>{plan.cta}</a>
+              </div>}
+            </div>
+          ))}
+        </div>
+        <p className="reveal" style={{color:'#71717A',fontSize:13,marginTop:16,textAlign:'center'}}>All prices exclude hosting costs. We help you choose the right hosting for your budget.</p>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:16,marginTop:56}} className="price-grid">
-        {plans.map(p=>(
-          <div key={p.name} className="reveal" style={{background:p.popular?'var(--card2)':'var(--card)',border:`1px solid ${p.popular?'var(--blue)':'var(--border)'}`,borderRadius:20,padding:'38px 30px',position:'relative',boxShadow:p.popular?'0 0 60px rgba(14,165,233,0.1)':'none',transition:'transform 0.3s'}}
-            onMouseEnter={e=>e.currentTarget.style.transform='translateY(-5px)'}
-            onMouseLeave={e=>e.currentTarget.style.transform='translateY(0)'}>
-            {p.popular&&<div style={{position:'absolute',top:-12,left:'50%',transform:'translateX(-50%)',background:'var(--blue)',color:'#000',fontSize:11,fontWeight:800,padding:'4px 16px',borderRadius:100,whiteSpace:'nowrap'}}>✦ Most Popular</div>}
-            <div style={{fontFamily:'Urbanist,sans-serif',fontSize:16,fontWeight:800,marginBottom:6}}>{p.name}</div>
-            <div style={{color:'var(--muted)',fontSize:12,fontWeight:300,marginBottom:24,lineHeight:1.5}}>{p.desc}</div>
-            <div style={{fontFamily:'Urbanist,sans-serif',fontSize:36,fontWeight:800,color:'var(--blue)',letterSpacing:'-2px',lineHeight:1,marginBottom:4}}>{p.price}<span style={{fontSize:13,color:'var(--muted)',fontFamily:'Manrope,sans-serif',fontWeight:300,marginLeft:4}}>starting from</span></div>
-            <div style={{fontSize:11,color:'var(--faint)',marginBottom:24}}>{p.note}</div>
-            <hr style={{border:'none',borderTop:'1px solid var(--border)',marginBottom:20}}/>
-            <ul style={{listStyle:'none',display:'flex',flexDirection:'column',gap:10,marginBottom:24}}>
-              {p.features.map(f=><li key={f} style={{display:'flex',gap:8,fontSize:13,color:'var(--muted)',fontWeight:300}}><span style={{color:'var(--blue)',fontWeight:700,flexShrink:0}}>✓</span>{f}</li>)}
-              {p.missing.map(f=><li key={f} style={{display:'flex',gap:8,fontSize:13,color:'var(--faint)',fontWeight:300}}><span style={{flexShrink:0}}>·</span>{f}</li>)}
-            </ul>
-            <a href="#contact" style={{display:'block',textAlign:'center',padding:12,borderRadius:10,fontWeight:700,fontSize:14,background:p.popular?'var(--blue)':'transparent',color:p.popular?'#000':'var(--blue2)',border:p.popular?'none':'1px solid rgba(14,165,233,0.3)'}}>Get a Quote</a>
-          </div>
-        ))}
-      </div>
-      <p className="reveal" style={{textAlign:'center',marginTop:24,color:'var(--faint)',fontSize:13}}>All prices are estimates. <a href="#contact" style={{color:'var(--blue)'}}>Contact us</a> for a free tailored quote.</p>
-      <style>{`@media(max-width:900px){.price-grid{grid-template-columns:1fr!important}}`}</style>
     </section>
   )
 }

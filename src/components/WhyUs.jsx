@@ -1,34 +1,39 @@
+import { useState } from 'react'
+
+const REASONS = [
+  {title:'We Build for Real Users',desc:'Every project we ship is tested with actual Kenyan users. We care about usability on low-end Android phones with slow connections — not just on MacBooks.'},
+  {title:'Full-Stack Capability',desc:'From database design to UI polish to deployment, we handle the entire product. No hand-offs, no miscommunication, no extra cost from fragmented teams.'},
+  {title:'M-Pesa Native',desc:'We integrate M-Pesa, escrow, STK Push, and Daraja API natively. Not as an afterthought — as a first-class feature of every financial product we build.'},
+  {title:'We Own the Code',desc:'You get full source code, GitHub access, and documentation. No vendor lock-in. No monthly licensing. It is your product and you can take it anywhere.'},
+  {title:'African Market First',desc:'We understand chamas, boda bodas, NHIF, KRA, M-Pesa statements, and USSD flows. We build for how Kenya actually works.'},
+  {title:'Transparent Pricing',desc:'Flat project rates. No hourly billing surprises. No scope creep charges without discussion. What we quote is what you pay.'},
+]
+
 export default function WhyUs(){
-  const reasons=[
-    {icon:'🇰🇪',title:'Built for Kenya',desc:'M-Pesa ready, NHIF/NSSF payroll, KRA compliance, Swahili support. We understand the Kenyan market inside out.'},
-    {icon:'⚡',title:'Fast Delivery',desc:'No endless waiting. Simple sites in 1-2 weeks. Complex systems in 4-8 weeks. We deliver on time, every time.'},
-    {icon:'💰',title:'Affordable Pricing',desc:'Agency quality at freelancer prices. Starting from KES 3,000. Flexible payment plans available for all budgets.'},
-    {icon:'🔧',title:'Full Support',desc:'We don\'t disappear after launch. Every project includes free support, staff training and ongoing maintenance.'},
-    {icon:'📱',title:'Mobile First',desc:'Every system we build works perfectly on any phone, any network — including slow 2G/3G connections across Kenya.'},
-    {icon:'🤝',title:'Direct Communication',desc:'You talk directly to the developer building your project. No middlemen, no account managers, no confusion.'},
-  ]
+  const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#030608',padding:'96px 6%',position:'relative',zIndex:1}}>
-      <div className="reveal" style={{textAlign:'center',marginBottom:56}}>
-        <div className="eyebrow" style={{justifyContent:'center'}}>Why Choose Us</div>
-        <h2 className="sec-title">Why Businesses Choose<br/>Kaliworks Technologies</h2>
-        <p className="sec-sub" style={{margin:'0 auto'}}>We're not just developers — we're your technology partners in Kenya.</p>
+    <section style={{background:'#fff',borderTop:'1px solid #E4E4E7'}}>
+      <div style={{maxWidth:800,margin:'0 auto'}}>
+        <p className="eyebrow reveal">Why Choose Us</p>
+        <h2 className="sec-title reveal">What Makes Us Different</h2>
+        <p className="sec-sub reveal" style={{marginBottom:32}}>We do not just write code. We build products that work for real people.</p>
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          {REASONS.map((r,i)=>(
+            <div key={i} className="reveal" style={{border:'1px solid #E4E4E7',borderRadius:10,overflow:'hidden',background:'#F9FAFB'}}>
+              <button onClick={()=>setOpen(open===i?null:i)}
+                style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
+                <span style={{fontSize:15,fontWeight:600,color:'#18181B'}}>{r.title}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" style={{transform:open===i?'rotate(180deg)':'none',transition:'transform 0.3s',flexShrink:0}}>
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #E4E4E7'}}>
+                <p style={{color:'#71717A',fontSize:14,lineHeight:1.8,marginTop:12}}>{r.desc}</p>
+              </div>}
+            </div>
+          ))}
+        </div>
       </div>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:1,background:'rgba(14,165,233,0.08)'}} className="why-grid">
-        {reasons.map((r,i)=>(
-          <div key={i} className="reveal" style={{background:'#060b12',padding:'36px 28px',transition:'all 0.3s',position:'relative',overflow:'hidden'}}
-            onMouseEnter={e=>{e.currentTarget.style.background='#0a1220'}}
-            onMouseLeave={e=>{e.currentTarget.style.background='#060b12'}}>
-            <div style={{position:'absolute',top:0,left:0,right:0,height:2,background:'linear-gradient(90deg,#0ea5e9,transparent)',opacity:0,transition:'opacity 0.3s'}}
-              onMouseEnter={e=>e.target.style.opacity=1}
-              onMouseLeave={e=>e.target.style.opacity=0}/>
-            <div style={{fontSize:36,marginBottom:16}}>{r.icon}</div>
-            <h3 style={{fontFamily:'Urbanist,sans-serif',fontSize:17,fontWeight:700,marginBottom:10,color:'#e8f4ff'}}>{r.title}</h3>
-            <p style={{color:'#7a99bb',fontSize:13,lineHeight:1.75,fontWeight:300}}>{r.desc}</p>
-          </div>
-        ))}
-      </div>
-      <style>{`@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr!important}}@media(max-width:500px){.why-grid{grid-template-columns:1fr!important}}`}</style>
     </section>
   )
 }
