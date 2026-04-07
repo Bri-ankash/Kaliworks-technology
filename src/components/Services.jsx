@@ -46,7 +46,7 @@ export default function Services(){
   const [openCat, setOpenCat] = useState(null)
 
   return(
-    <section id="services" style={{background:'#000',borderTop:'1px solid #1a1a1a'}}>
+    <section id="services" style={{background:'#333333',borderTop:'1px solid #4a4a4a'}}>
       <div style={{maxWidth:900,margin:'0 auto'}}>
         <p className="eyebrow reveal">What We Do</p>
         <h2 className="sec-title reveal">20 Digital Solutions<br/>Built for Kenya</h2>
@@ -71,12 +71,12 @@ export default function Services(){
                 <Chevron open={openCat===i}/>
               </button>
               {openCat===i&&(
-                <div style={{padding:'0 20px 20px',borderTop:'1px solid #1a1a1a'}}>
+                <div style={{padding:'0 20px 20px',borderTop:'1px solid #4a4a4a'}}>
                   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(100%,220px),1fr))',gap:12,marginTop:16}}>
                     {svcs.map(s=>(
-                      <div key={s.n} style={{background:'#111',border:'1px solid #1a1a1a',borderRadius:10,padding:16,transition:'all 0.2s'}}
-                        onMouseEnter={e=>{e.currentTarget.style.borderColor='#84cc16';e.currentTarget.style.background='#0a0a0a'}}
-                        onMouseLeave={e=>{e.currentTarget.style.borderColor='#1a1a1a';e.currentTarget.style.background='#111'}}>
+                      <div key={s.n} style={{background:'#404040',border:'1px solid #4a4a4a',borderRadius:10,padding:16,transition:'all 0.2s'}}
+                        onMouseEnter={e=>{e.currentTarget.style.borderColor='#84cc16';e.currentTarget.style.background='#3a3a3a'}}
+                        onMouseLeave={e=>{e.currentTarget.style.borderColor='#4a4a4a';e.currentTarget.style.background='#3f3f3f'}}>
                         <div style={{fontSize:10,fontWeight:700,color:'#84cc16',marginBottom:4,letterSpacing:1}}>{s.n}</div>
                         <div style={{fontWeight:700,fontSize:13,color:'#fff',marginBottom:6}}>{s.title}</div>
                         <p style={{color:'#999',fontSize:11,lineHeight:1.7,marginBottom:10}}>{s.desc}</p>
@@ -93,7 +93,7 @@ export default function Services(){
           ))}
         </div>
 
-        <div className="reveal" style={{textAlign:'center',marginTop:24,padding:'18px',background:'#0a0a0a',border:'1px solid #1a1a1a',borderRadius:10}}>
+        <div className="reveal" style={{textAlign:'center',marginTop:24,padding:'18px',background:'#3d3d3d',border:'1px solid #4a4a4a',borderRadius:10}}>
           <p style={{color:'#999',fontSize:14}}>Have a unique project? <a href="#contact" style={{color:'#84cc16',fontWeight:700}}>Tell us about it</a> — if it can be built, we build it.</p>
         </div>
       </div>

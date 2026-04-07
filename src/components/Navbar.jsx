@@ -1,4 +1,3 @@
-import ThemeToggle from './ThemeToggle'
 import { useState } from 'react'
 import Logo from './Logo'
 
@@ -13,13 +12,13 @@ export default function Navbar(){
       height:60,
       display:'flex',alignItems:'center',
       padding:'0 4%',gap:12,
-      background:'rgba(0,0,0,0.97)',
+      background:'rgba(30,30,30,0.97)',
       backdropFilter:'blur(20px)',
-      borderBottom:'1px solid #1a1a1a',
+      borderBottom:'1px solid #4a4a4a',
       width:'100%',boxSizing:'border-box'
     }}>
       {/* Theme toggle — top right for mobile */}
-      <div style={{marginLeft:'auto',display:'flex',gap:8,alignItems:'center'}}><ThemeToggle/></div>
+      <div style={{marginLeft:'auto',display:'flex',gap:8,alignItems:'center'}}></div>
 
       {/* Hamburger FIRST — leftmost */}
       <button
@@ -27,7 +26,7 @@ export default function Navbar(){
         aria-label="Menu"
         style={{
           background:'transparent',
-          border:'1px solid #2a2a2a',
+          border:'1px solid #4a4a4a',
           borderRadius:8,
           padding:'7px 9px',
           color:'#84cc16',
@@ -37,7 +36,7 @@ export default function Navbar(){
           transition:'border-color 0.2s'
         }}
         onMouseEnter={e=>e.currentTarget.style.borderColor='#84cc16'}
-        onMouseLeave={e=>e.currentTarget.style.borderColor='#2a2a2a'}>
+        onMouseLeave={e=>e.currentTarget.style.borderColor='#4a4a4a'}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth="2.5" strokeLinecap="round">
           {open
             ?<><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>
@@ -84,7 +83,7 @@ export default function Navbar(){
             Contact
           </a>
         </li>
-        <li><ThemeToggle/></li>
+        <li></li>
       </ul>
     </nav>
 
@@ -92,8 +91,8 @@ export default function Navbar(){
     {open&&(
       <div style={{
         position:'fixed',top:60,left:0,right:0,zIndex:99,
-        background:'#000',
-        borderBottom:'1px solid #1a1a1a',
+        background:'#333333',
+        borderBottom:'1px solid #4a4a4a',
         padding:'8px 4% 16px',
         boxShadow:'0 8px 24px rgba(0,0,0,0.4)'
       }}>
