@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 export default function WhatsApp(){
   const [hover, setHover] = useState(false)
-  const phone = '254700000000'
+  const phone = '254746951739'
   const msg = encodeURIComponent('Hi Kaliworks! I want to discuss a project.')
 
   return(

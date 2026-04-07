@@ -1,3 +1,4 @@
+import ThemeToggle from './ThemeToggle'
 import { useState } from 'react'
 import Logo from './Logo'
 
@@ -17,6 +18,9 @@ export default function Navbar(){
       borderBottom:'1px solid #1a1a1a',
       width:'100%',boxSizing:'border-box'
     }}>
+      {/* Theme toggle — top right for mobile */}
+      <div style={{marginLeft:'auto',display:'flex',gap:8,alignItems:'center'}}><ThemeToggle/></div>
+
       {/* Hamburger FIRST — leftmost */}
       <button
         onClick={()=>setOpen(!open)}
@@ -80,6 +84,7 @@ export default function Navbar(){
             Contact
           </a>
         </li>
+        <li><ThemeToggle/></li>
       </ul>
     </nav>
 

@@ -83,3 +83,56 @@ section{padding:80px 5%;position:relative;z-index:1}
   .hide-small{display:none!important}
   h1{letter-spacing:-1px!important}
 }
+
+/* ── LIGHT THEME ── */
+[data-theme='light'] body{
+  background:#F9FAFB!important;
+  color:#111111!important;
+}
+[data-theme='light'] section{
+  background:#F9FAFB!important;
+}
+[data-theme='light'] .sec-title{
+  color:#84cc16!important;
+}
+[data-theme='light'] .sec-sub{
+  color:#374151!important;
+}
+[data-theme='light'] .eyebrow{
+  color:#84cc16!important;
+}
+[data-theme='light'] p,
+[data-theme='light'] li,
+[data-theme='light'] span:not(.keep-color){
+  color:#111111;
+}
+[data-theme='light'] .drawer-item{
+  background:#FFFFFF!important;
+  border-color:#E5E7EB!important;
+}
+[data-theme='light'] .drawer-btn{
+  color:#111111!important;
+  background:#FFFFFF!important;
+}
+[data-theme='light'] .drawer-btn:hover{
+  background:#F3F4F6!important;
+}
+[data-theme='light'] .drawer-content{
+  border-top-color:#E5E7EB!important;
+}
+[data-theme='light'] nav{
+  background:rgba(249,250,251,0.97)!important;
+  border-bottom-color:#E5E7EB!important;
+}
+[data-theme='light'] footer{
+  background:#F3F4F6!important;
+  border-top-color:#E5E7EB!important;
+}
+/* Dark stays as before */
+[data-theme='dark'] body{
+  background:#000000!important;
+  color:#ffffff!important;
+}
+body{
+  transition:background 0.35s ease, color 0.35s ease;
+}
