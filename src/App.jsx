@@ -36,7 +36,7 @@ function MainSite(){
   },[])
 
   return(
-    <>
+    <div style={{overflowX:'hidden',maxWidth:'100vw',width:'100%'}}>
       <ScrollProgress/>
       <CursorGlow/>
       <Loader/>
@@ -58,7 +58,7 @@ function MainSite(){
       <Footer/>
       <WhatsApp/>
       <CookieBanner/>
-    </>
+    </div>
   )
 }
 

@@ -18,7 +18,7 @@ export default function Loader(){
         <Logo size={42}/>
         <span style={{fontFamily:'Urbanist,sans-serif',fontWeight:800,fontSize:26,color:'var(--white)'}}>Kali<span style={{color:'var(--blue)'}}>works</span></span>
       </div>
-      <div style={{width:200,height:2,background:'var(--card)',borderRadius:2,overflow:'hidden'}}>
+      <div style={{width:200,height:2,background:'var(--card)',borderRadius:2,overflow:'hidden',maxWidth:'100%'}}>
         <div style={{height:'100%',background:'linear-gradient(90deg,var(--blue),var(--blue2))',borderRadius:2,animation:'load 1.8s ease forwards'}}/>
       </div>
       <p style={{color:'var(--faint)',fontSize:11,marginTop:16,letterSpacing:3,textTransform:'uppercase'}}>Loading...</p>

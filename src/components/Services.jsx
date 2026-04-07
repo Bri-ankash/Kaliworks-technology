@@ -72,7 +72,7 @@ export default function Services(){
               </button>
               {openCat===i&&(
                 <div style={{padding:'0 20px 20px',borderTop:'1px solid #1a1a1a'}}>
-                  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:12,marginTop:16}}>
+                  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(100%,220px),1fr))',gap:12,marginTop:16}}>
                     {svcs.map(s=>(
                       <div key={s.n} style={{background:'#111',border:'1px solid #1a1a1a',borderRadius:10,padding:16,transition:'all 0.2s'}}
                         onMouseEnter={e=>{e.currentTarget.style.borderColor='#84cc16';e.currentTarget.style.background='#0a0a0a'}}

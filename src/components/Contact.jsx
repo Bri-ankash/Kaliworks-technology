@@ -11,7 +11,7 @@ export default function Contact(){
         <h2 className="sec-title">Ready to Build<br/>Something Great?</h2>
         <p className="sec-sub" style={{margin:'0 auto',textAlign:'center'}}>Tell us about your project. We respond within 2 hours — no commitment required.</p>
       </div>
-      <div className="reveal" style={{maxWidth:720,margin:'56px auto 0',background:'#0a0a0a',border:'1px solid #222',borderRadius:24,padding:'56px 44px',position:'relative',overflow:'hidden'}}>
+      <div className="reveal" style={{maxWidth:720,margin:'56px auto 0',background:'#0a0a0a',border:'1px solid #222',borderRadius:24,padding:'56px 44px',position:'relative',overflow:'hidden',maxWidth:'100%'}}>
         <div style={{position:'absolute',top:0,left:0,right:0,height:2,background:'linear-gradient(90deg,transparent,#84cc16,transparent)'}}/>
         <div style={{fontFamily:'Urbanist,sans-serif',fontSize:22,fontWeight:800,marginBottom:6}}>Kaliworks Technologies</div>
         <div style={{color:'#999',fontSize:14,fontWeight:300,marginBottom:40}}>Your technology partner in Kenya 🇰🇪 · We build, you grow.</div>
