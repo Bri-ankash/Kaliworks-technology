@@ -11,7 +11,7 @@ export default function Hero(){
       justifyContent:'center',textAlign:'center',
       padding:'120px 5% 80px',
       position:'relative',overflow:'hidden',
-      background:'#0049B7'
+      background:'#292121'
     }}>
       <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(132,204,22,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(132,204,22,0.025) 1px,transparent 1px)',backgroundSize:'60px 60px',maskImage:'radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 75%)'}}/>
       <div style={{position:'absolute',width:500,height:500,borderRadius:'50%',background:'radial-gradient(circle,rgba(132,204,22,0.04) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',pointerEvents:'none'}}/>

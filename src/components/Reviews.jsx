@@ -79,7 +79,7 @@ export default function Reviews(){
   const voted = JSON.parse(localStorage.getItem('kaliworks_voted')||'{}')
 
   return(
-    <section id="reviews" style={{background:'#0049B7',borderTop:'1px solid #0060d0'}}>
+    <section id="reviews" style={{background:'#292121',borderTop:'1px solid #3a2d2d'}}>
       <div style={{maxWidth:900,margin:'0 auto'}}>
         <p className="eyebrow reveal">Reviews</p>
         <h2 className="sec-title reveal">What Clients Say</h2>
@@ -94,11 +94,11 @@ export default function Reviews(){
             </svg>
           </button>
           {open&&(
-            <div style={{padding:'0 20px 20px',borderTop:'1px solid #0060d0'}}>
+            <div style={{padding:'0 20px 20px',borderTop:'1px solid #3a2d2d'}}>
               {approved.length===0?(
                 <p style={{color:'#555',fontSize:14,padding:'16px 0',textAlign:'center'}}>No reviews yet. Be the first to leave one below.</p>
               ):approved.map((r,i)=>(
-                <div key={r.id} style={{padding:'16px 0',borderBottom:i<approved.length-1?'1px solid #0060d0':'none'}}>
+                <div key={r.id} style={{padding:'16px 0',borderBottom:i<approved.length-1?'1px solid #3a2d2d':'none'}}>
                   <p style={{color:'#ccc',fontSize:14,lineHeight:1.8,marginBottom:10,fontStyle:'italic'}}>"{r.text}"</p>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:8}}>
                     <div>
@@ -131,7 +131,7 @@ export default function Reviews(){
         </div>
 
         {/* Leave a review */}
-        <div className="reveal" style={{background:'#0055cc',border:'1px solid #0060d0',borderRadius:12,padding:24,marginBottom:16}}>
+        <div className="reveal" style={{background:'#332828',border:'1px solid #3a2d2d',borderRadius:12,padding:24,marginBottom:16}}>
           <p style={{fontWeight:700,fontSize:14,color:'#fff',marginBottom:16}}>Leave a Review</p>
           {done?(
             <div style={{background:'rgba(132,204,22,0.08)',border:'1px solid rgba(132,204,22,0.2)',borderRadius:8,padding:'12px 16px',color:'#84cc16',fontSize:14}}>
@@ -142,20 +142,20 @@ export default function Reviews(){
               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
                 <input value={form.name} onChange={e=>setForm(f=>({...f,name:e.target.value}))}
                   placeholder="Your name" required
-                  style={{background:'#0057d0',border:'1px solid #0060d0',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none'}}
+                  style={{background:'#352929',border:'1px solid #3a2d2d',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none'}}
                   onFocus={e=>e.target.style.borderColor='#84cc16'}
-                  onBlur={e=>e.target.style.borderColor='#0060d0'}/>
+                  onBlur={e=>e.target.style.borderColor='#3a2d2d'}/>
                 <input value={form.role} onChange={e=>setForm(f=>({...f,role:e.target.value}))}
                   placeholder="Your role (optional)"
-                  style={{background:'#0057d0',border:'1px solid #0060d0',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none'}}
+                  style={{background:'#352929',border:'1px solid #3a2d2d',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none'}}
                   onFocus={e=>e.target.style.borderColor='#84cc16'}
-                  onBlur={e=>e.target.style.borderColor='#0060d0'}/>
+                  onBlur={e=>e.target.style.borderColor='#3a2d2d'}/>
               </div>
               <textarea value={form.text} onChange={e=>setForm(f=>({...f,text:e.target.value}))}
                 placeholder="Write your review..." rows={3} required
-                style={{background:'#0057d0',border:'1px solid #0060d0',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none',resize:'vertical'}}
+                style={{background:'#352929',border:'1px solid #3a2d2d',borderRadius:8,padding:'10px 14px',color:'#fff',fontSize:13,outline:'none',resize:'vertical'}}
                 onFocus={e=>e.target.style.borderColor='#84cc16'}
-                onBlur={e=>e.target.style.borderColor='#0060d0'}/>
+                onBlur={e=>e.target.style.borderColor='#3a2d2d'}/>
               <button onClick={submitReview} disabled={submitting||!form.name.trim()||!form.text.trim()}
                 style={{alignSelf:'flex-start',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#000',fontWeight:700,fontSize:13,border:'none',cursor:'pointer',opacity:submitting?0.7:1}}>
                 Submit Review
@@ -175,12 +175,12 @@ export default function Reviews(){
           {adminInput&&(
             <div style={{display:'flex',gap:8,alignItems:'center'}}>
               <input type="password" value={adminKey} onChange={e=>setAdminKey(e.target.value)} placeholder="Admin key"
-                style={{background:'#0055cc',border:'1px solid #0060d0',borderRadius:6,padding:'6px 12px',color:'#fff',fontSize:12,outline:'none',width:140}}/>
+                style={{background:'#332828',border:'1px solid #3a2d2d',borderRadius:6,padding:'6px 12px',color:'#fff',fontSize:12,outline:'none',width:140}}/>
               <button onClick={checkAdmin} style={{background:'#84cc16',color:'#000',border:'none',borderRadius:6,padding:'6px 12px',fontSize:12,fontWeight:700,cursor:'pointer'}}>Enter</button>
             </div>
           )}
           {adminMode&&(
-            <div style={{background:'#0055cc',border:'1px solid rgba(132,204,22,0.2)',borderRadius:10,padding:16}}>
+            <div style={{background:'#332828',border:'1px solid rgba(132,204,22,0.2)',borderRadius:10,padding:16}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
                 <span style={{color:'#84cc16',fontSize:12,fontWeight:700}}>Admin — {pending.length} pending, {approved.length} approved</span>
                 <button onClick={()=>setAdminMode(false)} style={{background:'transparent',border:'none',color:'#555',fontSize:12,cursor:'pointer'}}>Exit</button>

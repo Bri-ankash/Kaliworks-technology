@@ -13,7 +13,7 @@ const faqs=[
 export default function FAQ(){
   const [open, setOpen] = useState(null)
   return(
-    <section id="faq" style={{background:'#0049B7'}}>
+    <section id="faq" style={{background:'#292121'}}>
       <div className="reveal" style={{textAlign:'center'}}>
         <div className="eyebrow" style={{justifyContent:'center'}}>Common Questions</div>
         <h2 className="sec-title">Frequently Asked</h2>
@@ -21,7 +21,7 @@ export default function FAQ(){
       </div>
       <div style={{maxWidth:760,margin:'56px auto 0',display:'flex',flexDirection:'column',gap:12}}>
         {faqs.map((f,i)=>(
-          <div key={i} className="reveal" style={{background:'#0055cc',border:`1px solid ${open===i?'#222':'#0060d0'}`,borderRadius:14,overflow:'hidden',maxWidth:'100%'}}>
+          <div key={i} className="reveal" style={{background:'#332828',border:`1px solid ${open===i?'#222':'#3a2d2d'}`,borderRadius:14,overflow:'hidden',maxWidth:'100%'}}>
             <div onClick={()=>setOpen(open===i?null:i)} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'22px 26px',cursor:'pointer',fontFamily:'Urbanist,sans-serif',fontSize:15,fontWeight:700,gap:16,userSelect:'none'}}>
               {f.q}
               <span style={{color:'#84cc16',fontSize:20,transition:'transform 0.3s',transform:open===i?'rotate(45deg)':'rotate(0)',flexShrink:0}}>+</span>

@@ -22,7 +22,7 @@ export default function Process(){
   const [open, setOpen] = useState(false)
 
   return(
-    <section id="process" style={{background:'#0049B7',borderTop:'1px solid #0060d0'}}>
+    <section id="process" style={{background:'#292121',borderTop:'1px solid #3a2d2d'}}>
       <div style={{maxWidth:900,margin:'0 auto'}}>
         <p className="eyebrow reveal">How We Work</p>
         <h2 className="sec-title reveal">From Idea to Live<br/>in 4 Clear Steps</h2>
@@ -34,10 +34,10 @@ export default function Process(){
             <Chevron open={open}/>
           </button>
           {open&&(
-            <div style={{padding:'0 20px 20px',borderTop:'1px solid #0060d0'}}>
+            <div style={{padding:'0 20px 20px',borderTop:'1px solid #3a2d2d'}}>
               <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:12,marginTop:16}} className="proc-grid">
                 {STEPS.map(s=>(
-                  <div key={s.n} style={{background:'#0057d0',border:'1px solid #0060d0',borderRadius:10,padding:20}}>
+                  <div key={s.n} style={{background:'#352929',border:'1px solid #3a2d2d',borderRadius:10,padding:20}}>
                     <div style={{fontSize:42,fontWeight:800,color:'rgba(132,204,22,0.12)',letterSpacing:'-3px',lineHeight:1,marginBottom:12}}>{s.n}</div>
                     <h3 style={{fontSize:14,fontWeight:700,marginBottom:6,color:'#fff'}}>{s.title}</h3>
                     <p style={{color:'#999',fontSize:12,lineHeight:1.7}}>{s.desc}</p>
@@ -53,13 +53,13 @@ export default function Process(){
           <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
             {CHIPS.map(c=>(
               <span key={c} style={{
-                background:'#0055cc',border:'1px solid #0060d0',
+                background:'#332828',border:'1px solid #3a2d2d',
                 color:'#999',padding:'7px 14px',
                 borderRadius:100,fontSize:12,fontWeight:500,
                 transition:'all 0.2s',cursor:'default'
               }}
               onMouseEnter={e=>{e.target.style.background='rgba(132,204,22,0.08)';e.target.style.borderColor='rgba(132,204,22,0.3)';e.target.style.color='#84cc16'}}
-              onMouseLeave={e=>{e.target.style.background='#0052c4';e.target.style.borderColor='#0060d0';e.target.style.color='#999'}}>
+              onMouseLeave={e=>{e.target.style.background='#302727';e.target.style.borderColor='#3a2d2d';e.target.style.color='#999'}}>
                 {c}
               </span>
             ))}

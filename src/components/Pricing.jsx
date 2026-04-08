@@ -31,7 +31,7 @@ export default function Pricing(){
   const [open, setOpen] = useState(null)
 
   return(
-    <section id="pricing" style={{background:'#0049B7',borderTop:'1px solid #0060d0'}}>
+    <section id="pricing" style={{background:'#292121',borderTop:'1px solid #3a2d2d'}}>
       <div style={{maxWidth:900,margin:'0 auto'}}>
         <p className="eyebrow reveal">Pricing</p>
         <h2 className="sec-title reveal">Simple, Flat Pricing</h2>
@@ -39,7 +39,7 @@ export default function Pricing(){
 
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {PLANS.map((plan,i)=>(
-            <div key={i} className="reveal drawer-item" style={{border:`1px solid ${plan.popular?'#84cc16':'#0060d0'}`,position:'relative'}}>
+            <div key={i} className="reveal drawer-item" style={{border:`1px solid ${plan.popular?'#84cc16':'#3a2d2d'}`,position:'relative'}}>
               {plan.popular&&<div style={{position:'absolute',top:0,left:0,right:0,height:2,background:'#84cc16'}}/>}
               <button className="drawer-btn" onClick={()=>setOpen(open===i?null:i)}>
                 <div>
@@ -54,7 +54,7 @@ export default function Pricing(){
                 <Chevron open={open===i}/>
               </button>
               {open===i&&(
-                <div style={{padding:'0 20px 20px',borderTop:'1px solid #0060d0'}}>
+                <div style={{padding:'0 20px 20px',borderTop:'1px solid #3a2d2d'}}>
                   <p style={{color:'#999',fontSize:13,marginTop:12,marginBottom:16}}>{plan.desc}</p>
                   <ul style={{listStyle:'none',display:'flex',flexDirection:'column',gap:8,marginBottom:20}}>
                     {plan.features.map(f=>(

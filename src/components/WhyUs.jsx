@@ -12,14 +12,14 @@ const REASONS = [
 export default function WhyUs(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#0055cc',borderTop:'1px solid #0060d0'}}>
+    <section style={{background:'#332828',borderTop:'1px solid #3a2d2d'}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Why Choose Us</p>
         <h2 className="sec-title reveal">What Makes Us Different</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>We do not just write code. We build products that work for real people.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {REASONS.map((r,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #0060d0',borderRadius:10,overflow:'hidden',background:'#0055cc'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #3a2d2d',borderRadius:10,overflow:'hidden',background:'#332828'}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
                 <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>{r.title}</span>
@@ -27,7 +27,7 @@ export default function WhyUs(){
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #0060d0'}}>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #3a2d2d'}}>
                 <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{r.desc}</p>
               </div>}
             </div>

@@ -9,14 +9,14 @@ const PROJECTS = [
 export default function Portfolio(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#0055cc',borderTop:'1px solid #0060d0'}}>
+    <section style={{background:'#332828',borderTop:'1px solid #3a2d2d'}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Our Work</p>
         <h2 className="sec-title reveal">Projects We Are Proud Of</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>Live products built and deployed for the Kenyan market.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {PROJECTS.map((p,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #0060d0',borderRadius:10,overflow:'hidden',background:'#0055cc'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #3a2d2d',borderRadius:10,overflow:'hidden',background:'#332828'}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
                 <div>
@@ -27,7 +27,7 @@ export default function Portfolio(){
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #0060d0'}}>
+              {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #3a2d2d'}}>
                 <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12,marginBottom:12}}>{p.desc}</p>
                 <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:14}}>
                   {p.tech.split(', ').map(t=>(
