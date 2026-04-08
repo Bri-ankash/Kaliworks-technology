@@ -12,14 +12,14 @@ const ITEMS = [
 export default function BuiltForKenya(){
   const [open, setOpen] = useState(null)
   return(
-    <section style={{background:'#332828',borderTop:'1px solid #3a2d2d'}}>
+    <section style={{background:#000000,borderTop:'1px solid #000000}}>
       <div style={{maxWidth:800,margin:'0 auto'}}>
         <p className="eyebrow reveal">Built for Kenya</p>
         <h2 className="sec-title reveal">Made for Kenya. Built for Kenya.</h2>
         <p className="sec-sub reveal" style={{marginBottom:32}}>Not adapted. Designed here, for here, from the ground up.</p>
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {ITEMS.map((item,i)=>(
-            <div key={i} className="reveal" style={{border:'1px solid #3a2d2d',borderRadius:10,overflow:'hidden',background:'#332828'}}>
+            <div key={i} className="reveal" style={{border:'1px solid #000000,borderRadius:10,overflow:'hidden',background:#000000}}>
               <button onClick={()=>setOpen(open===i?null:i)}
                 style={{width:'100%',padding:'16px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',background:'transparent',border:'none',cursor:'pointer',textAlign:'left',gap:12}}>
                 <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>{item.title}</span>
@@ -27,7 +27,7 @@ export default function BuiltForKenya(){
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
-              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #3a2d2d'}}>
+              {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #000000}}>
                 <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{item.desc}</p>
               </div>}
             </div>

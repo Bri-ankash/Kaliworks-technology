@@ -7,20 +7,20 @@ export default function Stats(){
   ]
 
   return(
-    <section style={{background:'#292121',borderTop:'1px solid #3a2d2d',padding:'56px 5%'}}>
+    <section style={{background:#000000,borderTop:'1px solid #000000,padding:'56px 5%'}}>
       <div style={{maxWidth:700,margin:'0 auto'}}>
         <div className="stats-grid" style={{
           display:'grid',
           gridTemplateColumns:'1fr 1fr',
           gap:2,
-          background:'#3a2d2d',
-          border:'1px solid #3a2d2d',
+          background:#000000,
+          border:'1px solid #000000,
           borderRadius:14,
           overflow:'hidden'
         }}>
           {items.map((item,i)=>(
             <div key={i} className="reveal" style={{
-              background:'#332828',
+              background:#000000,
               padding:'32px 20px',
               textAlign:'center'
             }}>

@@ -19,7 +19,7 @@ export default function About(){
   const [open, setOpen] = useState(null)
 
   return(
-    <section id="about" style={{background:'#292121',borderTop:'1px solid #3a2d2d'}}>
+    <section id="about" style={{background:#000000,borderTop:'1px solid #000000}}>
       <div style={{maxWidth:900,margin:'0 auto'}}>
         <p className="eyebrow reveal">About Us</p>
         <h2 className="sec-title reveal">Who Are We</h2>
@@ -42,7 +42,7 @@ export default function About(){
         </div>
 
         {/* Team */}
-        <div className="reveal" style={{background:'#332828',border:'1px solid #3a2d2d',borderRadius:12,padding:24}}>
+        <div className="reveal" style={{background:#000000,border:'1px solid #000000,borderRadius:12,padding:24}}>
           <p style={{fontWeight:700,fontSize:11,color:'#fbbf24',marginBottom:18,textTransform:'uppercase',letterSpacing:2}}>The Team</p>
           <div style={{display:'flex',gap:16,alignItems:'flex-start',flexWrap:'wrap'}}>
             {/* Brian's photo */}
@@ -58,7 +58,7 @@ export default function About(){
                 style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top'}}
                 onError={e=>{
                   e.target.style.display='none'
-                  e.target.parentElement.style.background='#3a2d2d'
+                  e.target.parentElement.style.background=#000000
                   e.target.parentElement.innerHTML='<span style="color:#fbbf24;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;height:100%">B</span>'
                 }}
               />

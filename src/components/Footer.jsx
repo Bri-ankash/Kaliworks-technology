@@ -3,8 +3,8 @@ export default function Footer(){
   return(
     <footer style={{
       padding:'24px 5%',
-      borderTop:'1px solid #3a2d2d',
-      background:'#292121',
+      borderTop:'1px solid #000000,
+      background:#000000,
       position:'relative',zIndex:1
     }}>
       <div style={{
