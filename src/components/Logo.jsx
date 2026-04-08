@@ -5,7 +5,7 @@ export default function Logo({ size=34 }){
       <div style={{
         width:size,height:size,
         borderRadius:9,
-        background:'#3d3d3d',
+        background:'#0055cc',
         border:'2px solid #fbbf24',
         display:'flex',alignItems:'center',justifyContent:'center',
         flexShrink:0,
