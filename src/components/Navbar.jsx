@@ -78,7 +78,7 @@ export default function Navbar(){
               fontSize:13,fontWeight:700,textDecoration:'none',
               transition:'all 0.2s'
             }}
-            onMouseEnter={e=>{e.target.style.background='#84cc16';e.target.style.color='#000'}}
+            onMouseEnter={e=>{e.target.style.background='#84cc16';e.target.style.color='#292121'}}
             onMouseLeave={e=>{e.target.style.background='rgba(132,204,22,0.1)';e.target.style.color='#84cc16'}}>
             Contact
           </a>

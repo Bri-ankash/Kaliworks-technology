@@ -13,7 +13,7 @@ export default function Hero(){
       position:'relative',overflow:'hidden',
       background:#000000
     }}>
-      <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(132,204,22,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(132,204,22,0.025) 1px,transparent 1px)',backgroundSize:'60px 60px',maskImage:'radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 75%)'}}/>
+      <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(251,191,36,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(251,191,36,0.04) 1px,transparent 1px)',backgroundSize:'60px 60px',maskImage:'radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 75%)'}}/>
       <div style={{position:'absolute',width:500,height:500,borderRadius:'50%',background:'radial-gradient(circle,rgba(132,204,22,0.04) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',pointerEvents:'none'}}/>
 
       <div style={{position:'relative',zIndex:1,maxWidth:860,width:'100%'}}>
@@ -42,7 +42,7 @@ export default function Hero(){
 
         <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',...t('0.3s')}}>
           <a href="#services" style={{
-            background:'#84cc16',color:'#000',
+            background:'#84cc16',color:'#292121',
             padding:'13px 28px',borderRadius:10,
             fontWeight:700,fontSize:14,
             boxShadow:'0 0 24px rgba(132,204,22,0.2)',
