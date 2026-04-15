@@ -38,7 +38,7 @@ export default function AdminReviews(){
         <input type="password" placeholder="Enter admin password" value={pwd} onChange={e=>setPwd(e.target.value)}
           style={{width:'100%',background:'var(--deep)',border:'1px solid var(--border)',borderRadius:8,padding:'12px 14px',color:'var(--white)',fontSize:14,outline:'none',marginBottom:14}}/>
         <button onClick={()=>{ if(pwd===ADMIN_PASSWORD) setAuth(true); else alert('Wrong password!') }}
-          style={{width:'100%',background:'var(--blue)',color:'#292121',padding:12,borderRadius:10,fontWeight:700,fontSize:14,border:'none',cursor:'pointer'}}>
+          style={{width:'100%',background:'var(--blue)',color:'#1a1200',padding:12,borderRadius:10,fontWeight:700,fontSize:14,border:'none',cursor:'pointer'}}>
           Login
         </button>
       </div>
@@ -54,7 +54,7 @@ export default function AdminReviews(){
             <button key={s} onClick={()=>setFilter(s)}
               style={{padding:'8px 18px',borderRadius:8,border:'none',cursor:'pointer',fontWeight:600,fontSize:13,textTransform:'capitalize',
                 background:filter===s?'var(--blue)':'var(--card)',
-                color:filter===s?'#292121':'var(--muted)'}}>
+                color:filter===s?'#1a1200':'var(--muted)'}}>
               {s}
             </button>
           ))}
@@ -80,13 +80,13 @@ export default function AdminReviews(){
               <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
                 {filter !== 'approved' && (
                   <button onClick={()=>updateStatus(r.id,'approved')}
-                    style={{background:'#22c55e',color:'#292121',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,border:'none',cursor:'pointer'}}>
+                    style={{background:'#22c55e',color:'#1a1200',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,border:'none',cursor:'pointer'}}>
                     ✓ Approve
                   </button>
                 )}
                 {filter !== 'rejected' && (
                   <button onClick={()=>updateStatus(r.id,'rejected')}
-                    style={{background:'#f59e0b',color:'#292121',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,border:'none',cursor:'pointer'}}>
+                    style={{background:'#f59e0b',color:'#1a1200',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,border:'none',cursor:'pointer'}}>
                     ✗ Reject
                   </button>
                 )}

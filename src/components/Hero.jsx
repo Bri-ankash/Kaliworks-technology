@@ -42,7 +42,7 @@ export default function Hero(){
 
         <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',...t('0.3s')}}>
           <a href="#services" style={{
-            background:'#84cc16',color:'#292121',
+            background:'#84cc16',color:'#1a1200',
             padding:'13px 28px',borderRadius:10,
             fontWeight:700,fontSize:14,
             boxShadow:'0 0 24px rgba(132,204,22,0.2)',
