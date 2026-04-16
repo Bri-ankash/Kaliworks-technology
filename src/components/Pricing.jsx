@@ -66,7 +66,7 @@ export default function Pricing(){
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" style={{display:'inline-block',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#0d0d0d',fontSize:13,fontWeight:700}}>
+                  <a href="#contact" style={{display:'inline-block',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#000000',fontSize:13,fontWeight:700}}>
                     {plan.price==='Custom'?'Get a Quote':'Start Project'}
                   </a>
                 </div>

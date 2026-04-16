@@ -157,7 +157,7 @@ export default function Reviews(){
                 onFocus={e=>e.target.style.borderColor='#84cc16'}
                 onBlur={e=>e.target.style.borderColor=#000000}/>
               <button onClick={submitReview} disabled={submitting||!form.name.trim()||!form.text.trim()}
-                style={{alignSelf:'flex-start',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#0d0d0d',fontWeight:700,fontSize:13,border:'none',cursor:'pointer',opacity:submitting?0.7:1}}>
+                style={{alignSelf:'flex-start',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#000000',fontWeight:700,fontSize:13,border:'none',cursor:'pointer',opacity:submitting?0.7:1}}>
                 Submit Review
               </button>
             </div>
@@ -176,7 +176,7 @@ export default function Reviews(){
             <div style={{display:'flex',gap:8,alignItems:'center'}}>
               <input type="password" value={adminKey} onChange={e=>setAdminKey(e.target.value)} placeholder="Admin key"
                 style={{background:#000000,border:'1px solid #000000,borderRadius:6,padding:'6px 12px',color:'#fff',fontSize:12,outline:'none',width:140}}/>
-              <button onClick={checkAdmin} style={{background:'#84cc16',color:'#0d0d0d',border:'none',borderRadius:6,padding:'6px 12px',fontSize:12,fontWeight:700,cursor:'pointer'}}>Enter</button>
+              <button onClick={checkAdmin} style={{background:'#84cc16',color:'#000000',border:'none',borderRadius:6,padding:'6px 12px',fontSize:12,fontWeight:700,cursor:'pointer'}}>Enter</button>
             </div>
           )}
           {adminMode&&(

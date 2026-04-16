@@ -21,7 +21,7 @@ export default function CookieBanner(){
       </div>
       <div style={{display:'flex',gap:10,flexShrink:0}}>
         <button onClick={decline} style={{background:'transparent',border:'1px solid var(--border)',color:'var(--muted)',padding:'8px 18px',borderRadius:8,fontWeight:600,fontSize:13,cursor:'pointer',fontFamily:'Manrope,sans-serif'}}>Decline</button>
-        <button onClick={accept} style={{background:'var(--blue)',color:'#0d0d0d',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,cursor:'pointer',border:'none',fontFamily:'Manrope,sans-serif'}}>Accept</button>
+        <button onClick={accept} style={{background:'var(--blue)',color:'#000000',padding:'8px 18px',borderRadius:8,fontWeight:700,fontSize:13,cursor:'pointer',border:'none',fontFamily:'Manrope,sans-serif'}}>Accept</button>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ export default function Marquee(){
 
   return(
     <div style={{
-      background:'#161616',
+      background:'#0a0a0a',
       borderTop:'1px solid #2a2a2a',
       borderBottom:'1px solid #2a2a2a',
       padding:'13px 0',
