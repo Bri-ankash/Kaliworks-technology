@@ -17,7 +17,7 @@ export default function Footer(){
         <p style={{color:'#333',fontSize:12,textAlign:'center',flex:1,minWidth:200}}>
           © 2026 Kaliworks Technologies. Building Africa's digital future.
         </p>
-        <p style={{color:'#555',fontSize:12}}>Nairobi, Kenya</p>
+        <p style={{color:'#888880',fontSize:12}}>Nairobi, Kenya</p>
       </div>
     </footer>
   )

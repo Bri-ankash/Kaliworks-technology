@@ -12,7 +12,7 @@ export default function Navbar(){
       height:60,
       display:'flex',alignItems:'center',
       padding:'0 4%',gap:12,
-      background:'rgba(20,14,0,0.97)',
+      background:'rgba(8,8,8,0.98)',
       backdropFilter:'blur(20px)',
       borderBottom:'1px solid #000000,
       width:'100%',boxSizing:'border-box'
@@ -61,9 +61,9 @@ export default function Navbar(){
         {links.map(([id,label])=>(
           <li key={id}>
             <a href={`#${id}`}
-              style={{color:'#777',fontSize:13,fontWeight:500,textDecoration:'none',transition:'color 0.2s'}}
+              style={{color:'#888880',fontSize:13,fontWeight:500,textDecoration:'none',transition:'color 0.2s'}}
               onMouseEnter={e=>e.target.style.color='#fff'}
-              onMouseLeave={e=>e.target.style.color='#777'}>
+              onMouseLeave={e=>e.target.style.color='#888880'}>
               {label}
             </a>
           </li>
@@ -78,7 +78,7 @@ export default function Navbar(){
               fontSize:13,fontWeight:700,textDecoration:'none',
               transition:'all 0.2s'
             }}
-            onMouseEnter={e=>{e.target.style.background='#84cc16';e.target.style.color='#1a1200'}}
+            onMouseEnter={e=>{e.target.style.background='#84cc16';e.target.style.color='#0d0d0d'}}
             onMouseLeave={e=>{e.target.style.background='rgba(132,204,22,0.1)';e.target.style.color='#84cc16'}}>
             Contact
           </a>

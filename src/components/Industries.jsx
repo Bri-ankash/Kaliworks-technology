@@ -30,7 +30,7 @@ export default function Industries(){
                 </svg>
               </button>
               {open===i&&<div style={{padding:'0 20px 16px',borderTop:'1px solid #000000}}>
-                <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{ind.desc}</p>
+                <p style={{color:'#888880',fontSize:14,lineHeight:1.8,marginTop:12}}>{ind.desc}</p>
               </div>}
             </div>
           ))}

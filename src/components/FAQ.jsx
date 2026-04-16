@@ -26,7 +26,7 @@ export default function FAQ(){
               {f.q}
               <span style={{color:'#84cc16',fontSize:20,transition:'transform 0.3s',transform:open===i?'rotate(45deg)':'rotate(0)',flexShrink:0}}>+</span>
             </div>
-            {open===i&&<p style={{padding:'0 26px 22px',color:'#999',fontSize:14,lineHeight:1.75,fontWeight:300}}>{f.a}</p>}
+            {open===i&&<p style={{padding:'0 26px 22px',color:'#888880',fontSize:14,lineHeight:1.75,fontWeight:300}}>{f.a}</p>}
           </div>
         ))}
       </div>

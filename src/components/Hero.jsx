@@ -31,7 +31,7 @@ export default function Hero(){
 
         <p style={{
           fontSize:'clamp(14px,1.6vw,17px)',
-          color:'#888',lineHeight:1.8,
+          color:'#888880',lineHeight:1.8,
           maxWidth:520,margin:'0 auto 40px',
           fontWeight:400,
           ...t('0.15s')
@@ -42,7 +42,7 @@ export default function Hero(){
 
         <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',...t('0.3s')}}>
           <a href="#services" style={{
-            background:'#84cc16',color:'#1a1200',
+            background:'#84cc16',color:'#0d0d0d',
             padding:'13px 28px',borderRadius:10,
             fontWeight:700,fontSize:14,
             boxShadow:'0 0 24px rgba(132,204,22,0.2)',

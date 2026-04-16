@@ -32,7 +32,7 @@ export default function Stats(){
                 lineHeight:1,
                 marginBottom:8
               }}>{item.n}</div>
-              <div style={{color:'#555',fontSize:12,fontWeight:600,textTransform:'uppercase',letterSpacing:2}}>{item.label}</div>
+              <div style={{color:'#888880',fontSize:12,fontWeight:600,textTransform:'uppercase',letterSpacing:2}}>{item.label}</div>
             </div>
           ))}
         </div>

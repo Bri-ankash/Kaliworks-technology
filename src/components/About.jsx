@@ -34,7 +34,7 @@ export default function About(){
               </button>
               {open===i&&(
                 <div className="drawer-content">
-                  <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12}}>{item.desc}</p>
+                  <p style={{color:'#888880',fontSize:14,lineHeight:1.8,marginTop:12}}>{item.desc}</p>
                 </div>
               )}
             </div>
@@ -66,7 +66,7 @@ export default function About(){
             <div style={{flex:1,minWidth:200}}>
               <div style={{fontWeight:700,fontSize:16,color:'#fff',marginBottom:3}}>Brian Kalali</div>
               <div style={{color:'#84cc16',fontSize:12,fontWeight:600,marginBottom:10}}>Founder & Lead Developer</div>
-              <p style={{color:'#999',fontSize:13,lineHeight:1.8,maxWidth:480}}>
+              <p style={{color:'#888880',fontSize:13,lineHeight:1.8,maxWidth:480}}>
                 Kenya-based full-stack developer crafting scalable, practical software. Experienced in Python, React, and M-Pesa integrations, and passionate about creating solutions that make a real impact.
               </p>
             </div>

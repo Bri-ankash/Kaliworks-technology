@@ -40,7 +40,7 @@ export default function Process(){
                   <div key={s.n} style={{background:#000000,border:'1px solid #000000,borderRadius:10,padding:20}}>
                     <div style={{fontSize:42,fontWeight:800,color:'rgba(132,204,22,0.12)',letterSpacing:'-3px',lineHeight:1,marginBottom:12}}>{s.n}</div>
                     <h3 style={{fontSize:14,fontWeight:700,marginBottom:6,color:'#fff'}}>{s.title}</h3>
-                    <p style={{color:'#999',fontSize:12,lineHeight:1.7}}>{s.desc}</p>
+                    <p style={{color:'#888880',fontSize:12,lineHeight:1.7}}>{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -54,12 +54,12 @@ export default function Process(){
             {CHIPS.map(c=>(
               <span key={c} style={{
                 background:#000000,border:'1px solid #000000,
-                color:'#999',padding:'7px 14px',
+                color:'#888880',padding:'7px 14px',
                 borderRadius:100,fontSize:12,fontWeight:500,
                 transition:'all 0.2s',cursor:'default'
               }}
               onMouseEnter={e=>{e.target.style.background='rgba(132,204,22,0.08)';e.target.style.borderColor='rgba(132,204,22,0.3)';e.target.style.color='#84cc16'}}
-              onMouseLeave={e=>{e.target.style.background=#000000;e.target.style.borderColor=#000000;e.target.style.color='#999'}}>
+              onMouseLeave={e=>{e.target.style.background=#000000;e.target.style.borderColor=#000000;e.target.style.color='#888880'}}>
                 {c}
               </span>
             ))}

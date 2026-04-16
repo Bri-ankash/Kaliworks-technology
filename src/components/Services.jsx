@@ -53,7 +53,7 @@ export default function Services(){
         <p className="sec-sub reveal" style={{marginBottom:8}}>
           From simple websites to complex SaaS — everything your business needs online.
         </p>
-        <p style={{color:'#999',fontSize:13,marginBottom:36}}>Tap a category to explore services.</p>
+        <p style={{color:'#888880',fontSize:13,marginBottom:36}}>Tap a category to explore services.</p>
 
         <div style={{display:'flex',flexDirection:'column',gap:8}}>
           {Object.entries(CATS).map(([cat,svcs],i)=>(
@@ -65,7 +65,7 @@ export default function Services(){
                   </div>
                   <div>
                     <div style={{fontWeight:700,fontSize:15,color:'#fff'}}>{cat}</div>
-                    <div style={{color:'#999',fontSize:12}}>{svcs.length} services</div>
+                    <div style={{color:'#888880',fontSize:12}}>{svcs.length} services</div>
                   </div>
                 </div>
                 <Chevron open={openCat===i}/>
@@ -79,10 +79,10 @@ export default function Services(){
                         onMouseLeave={e=>{e.currentTarget.style.borderColor=#000000;e.currentTarget.style.background=#000000}}>
                         <div style={{fontSize:10,fontWeight:700,color:'#84cc16',marginBottom:4,letterSpacing:1}}>{s.n}</div>
                         <div style={{fontWeight:700,fontSize:13,color:'#fff',marginBottom:6}}>{s.title}</div>
-                        <p style={{color:'#999',fontSize:11,lineHeight:1.7,marginBottom:10}}>{s.desc}</p>
+                        <p style={{color:'#888880',fontSize:11,lineHeight:1.7,marginBottom:10}}>{s.desc}</p>
                         <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
                           <span style={{background:'rgba(132,204,22,0.08)',border:'1px solid rgba(132,204,22,0.2)',color:'#84cc16',fontSize:10,padding:'2px 8px',borderRadius:100,fontWeight:700}}>{s.price}</span>
-                          <span style={{color:'#555',fontSize:10,padding:'2px 8px'}}>{s.tag}</span>
+                          <span style={{color:'#888880',fontSize:10,padding:'2px 8px'}}>{s.tag}</span>
                         </div>
                       </div>
                     ))}
@@ -94,7 +94,7 @@ export default function Services(){
         </div>
 
         <div className="reveal" style={{textAlign:'center',marginTop:24,padding:'18px',background:#000000,border:'1px solid #000000,borderRadius:10}}>
-          <p style={{color:'#999',fontSize:14}}>Have a unique project? <a href="#contact" style={{color:'#84cc16',fontWeight:700}}>Tell us about it</a> — if it can be built, we build it.</p>
+          <p style={{color:'#888880',fontSize:14}}>Have a unique project? <a href="#contact" style={{color:'#84cc16',fontWeight:700}}>Tell us about it</a> — if it can be built, we build it.</p>
         </div>
       </div>
     </section>

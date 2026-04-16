@@ -48,14 +48,14 @@ export default function Pricing(){
                     {plan.popular&&<span style={{background:'rgba(132,204,22,0.1)',color:'#84cc16',fontSize:10,fontWeight:700,padding:'2px 8px',borderRadius:100,border:'1px solid rgba(132,204,22,0.3)'}}>Popular</span>}
                   </div>
                   <div style={{fontSize:20,fontWeight:800,color:'#84cc16'}}>
-                    {plan.price} <span style={{fontSize:12,color:'#999',fontWeight:400}}>{plan.period}</span>
+                    {plan.price} <span style={{fontSize:12,color:'#888880',fontWeight:400}}>{plan.period}</span>
                   </div>
                 </div>
                 <Chevron open={open===i}/>
               </button>
               {open===i&&(
                 <div style={{padding:'0 20px 20px',borderTop:'1px solid #000000}}>
-                  <p style={{color:'#999',fontSize:13,marginTop:12,marginBottom:16}}>{plan.desc}</p>
+                  <p style={{color:'#888880',fontSize:13,marginTop:12,marginBottom:16}}>{plan.desc}</p>
                   <ul style={{listStyle:'none',display:'flex',flexDirection:'column',gap:8,marginBottom:20}}>
                     {plan.features.map(f=>(
                       <li key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#ccc'}}>
@@ -66,7 +66,7 @@ export default function Pricing(){
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" style={{display:'inline-block',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#1a1200',fontSize:13,fontWeight:700}}>
+                  <a href="#contact" style={{display:'inline-block',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#0d0d0d',fontSize:13,fontWeight:700}}>
                     {plan.price==='Custom'?'Get a Quote':'Start Project'}
                   </a>
                 </div>
@@ -74,7 +74,7 @@ export default function Pricing(){
             </div>
           ))}
         </div>
-        <p className="reveal" style={{color:'#555',fontSize:12,marginTop:16,textAlign:'center'}}>All prices exclude hosting costs. We help you choose the right hosting for your budget.</p>
+        <p className="reveal" style={{color:'#888880',fontSize:12,marginTop:16,textAlign:'center'}}>All prices exclude hosting costs. We help you choose the right hosting for your budget.</p>
       </div>
     </section>
   )

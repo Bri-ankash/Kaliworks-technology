@@ -28,7 +28,7 @@ export default function Portfolio(){
                 </svg>
               </button>
               {open===i&&<div style={{padding:'0 20px 20px',borderTop:'1px solid #000000}}>
-                <p style={{color:'#999',fontSize:14,lineHeight:1.8,marginTop:12,marginBottom:12}}>{p.desc}</p>
+                <p style={{color:'#888880',fontSize:14,lineHeight:1.8,marginTop:12,marginBottom:12}}>{p.desc}</p>
                 <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:14}}>
                   {p.tech.split(', ').map(t=>(
                     <span key={t} style={{background:'rgba(132,204,22,0.1)',color:'#84cc16',fontSize:11,fontWeight:600,padding:'3px 10px',borderRadius:100}}>{t}</span>

@@ -96,18 +96,18 @@ export default function Reviews(){
           {open&&(
             <div style={{padding:'0 20px 20px',borderTop:'1px solid #000000}}>
               {approved.length===0?(
-                <p style={{color:'#555',fontSize:14,padding:'16px 0',textAlign:'center'}}>No reviews yet. Be the first to leave one below.</p>
+                <p style={{color:'#888880',fontSize:14,padding:'16px 0',textAlign:'center'}}>No reviews yet. Be the first to leave one below.</p>
               ):approved.map((r,i)=>(
                 <div key={r.id} style={{padding:'16px 0',borderBottom:i<approved.length-1?'1px solid #000000:'none'}}>
                   <p style={{color:'#ccc',fontSize:14,lineHeight:1.8,marginBottom:10,fontStyle:'italic'}}>"{r.text}"</p>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:8}}>
                     <div>
                       <div style={{fontWeight:700,fontSize:13,color:'#fff'}}>{r.name}</div>
-                      {r.role&&<div style={{fontSize:12,color:'#555'}}>{r.role}</div>}
+                      {r.role&&<div style={{fontSize:12,color:'#888880'}}>{r.role}</div>}
                     </div>
                     <div style={{display:'flex',gap:10,alignItems:'center'}}>
                       <button onClick={()=>vote(r.id,'up')}
-                        style={{display:'flex',alignItems:'center',gap:4,background:'rgba(132,204,22,0.08)',border:'1px solid rgba(132,204,22,0.2)',borderRadius:6,padding:'5px 10px',color:voted[r.id]==='up'?'#84cc16':'#555',fontSize:12,cursor:'pointer'}}>
+                        style={{display:'flex',alignItems:'center',gap:4,background:'rgba(132,204,22,0.08)',border:'1px solid rgba(132,204,22,0.2)',borderRadius:6,padding:'5px 10px',color:voted[r.id]==='up'?'#84cc16':'#888880',fontSize:12,cursor:'pointer'}}>
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"/>
                           <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
@@ -115,7 +115,7 @@ export default function Reviews(){
                         {r.up}
                       </button>
                       <button onClick={()=>vote(r.id,'down')}
-                        style={{display:'flex',alignItems:'center',gap:4,background:'rgba(239,68,68,0.06)',border:'1px solid rgba(239,68,68,0.2)',borderRadius:6,padding:'5px 10px',color:voted[r.id]==='down'?'#ef4444':'#555',fontSize:12,cursor:'pointer'}}>
+                        style={{display:'flex',alignItems:'center',gap:4,background:'rgba(239,68,68,0.06)',border:'1px solid rgba(239,68,68,0.2)',borderRadius:6,padding:'5px 10px',color:voted[r.id]==='down'?'#ef4444':'#888880',fontSize:12,cursor:'pointer'}}>
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3z"/>
                           <path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/>
@@ -157,7 +157,7 @@ export default function Reviews(){
                 onFocus={e=>e.target.style.borderColor='#84cc16'}
                 onBlur={e=>e.target.style.borderColor=#000000}/>
               <button onClick={submitReview} disabled={submitting||!form.name.trim()||!form.text.trim()}
-                style={{alignSelf:'flex-start',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#1a1200',fontWeight:700,fontSize:13,border:'none',cursor:'pointer',opacity:submitting?0.7:1}}>
+                style={{alignSelf:'flex-start',padding:'10px 24px',borderRadius:8,background:'#84cc16',color:'#0d0d0d',fontWeight:700,fontSize:13,border:'none',cursor:'pointer',opacity:submitting?0.7:1}}>
                 Submit Review
               </button>
             </div>
@@ -176,21 +176,21 @@ export default function Reviews(){
             <div style={{display:'flex',gap:8,alignItems:'center'}}>
               <input type="password" value={adminKey} onChange={e=>setAdminKey(e.target.value)} placeholder="Admin key"
                 style={{background:#000000,border:'1px solid #000000,borderRadius:6,padding:'6px 12px',color:'#fff',fontSize:12,outline:'none',width:140}}/>
-              <button onClick={checkAdmin} style={{background:'#84cc16',color:'#1a1200',border:'none',borderRadius:6,padding:'6px 12px',fontSize:12,fontWeight:700,cursor:'pointer'}}>Enter</button>
+              <button onClick={checkAdmin} style={{background:'#84cc16',color:'#0d0d0d',border:'none',borderRadius:6,padding:'6px 12px',fontSize:12,fontWeight:700,cursor:'pointer'}}>Enter</button>
             </div>
           )}
           {adminMode&&(
             <div style={{background:#000000,border:'1px solid rgba(132,204,22,0.2)',borderRadius:10,padding:16}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
                 <span style={{color:'#84cc16',fontSize:12,fontWeight:700}}>Admin — {pending.length} pending, {approved.length} approved</span>
-                <button onClick={()=>setAdminMode(false)} style={{background:'transparent',border:'none',color:'#555',fontSize:12,cursor:'pointer'}}>Exit</button>
+                <button onClick={()=>setAdminMode(false)} style={{background:'transparent',border:'none',color:'#888880',fontSize:12,cursor:'pointer'}}>Exit</button>
               </div>
-              {reviews.length===0&&<p style={{color:'#555',fontSize:13}}>No reviews yet.</p>}
+              {reviews.length===0&&<p style={{color:'#888880',fontSize:13}}>No reviews yet.</p>}
               {reviews.map(r=>(
                 <div key={r.id} style={{padding:'10px 0',borderBottom:'1px solid #111',display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:10}}>
                   <div>
-                    <div style={{fontWeight:600,fontSize:13,color:'#fff'}}>{r.name} {r.role&&<span style={{color:'#555',fontWeight:400}}>· {r.role}</span>}</div>
-                    <p style={{color:'#999',fontSize:12,lineHeight:1.6,margin:'4px 0'}}>{r.text.slice(0,100)}{r.text.length>100?'...':''}</p>
+                    <div style={{fontWeight:600,fontSize:13,color:'#fff'}}>{r.name} {r.role&&<span style={{color:'#888880',fontWeight:400}}>· {r.role}</span>}</div>
+                    <p style={{color:'#888880',fontSize:12,lineHeight:1.6,margin:'4px 0'}}>{r.text.slice(0,100)}{r.text.length>100?'...':''}</p>
                     <span style={{fontSize:10,color:r.approved?'#84cc16':'#f59e0b'}}>{r.approved?'Approved':'Pending'}</span>
                   </div>
                   <div style={{display:'flex',gap:6,flexShrink:0}}>
